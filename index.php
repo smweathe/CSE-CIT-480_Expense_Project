@@ -2,17 +2,23 @@
 	include 'header.php';
 
 	if (isset($_SESSION['id'])){
-		echo 'Login successful.'."<br/>\n";
+		//echo 'Login successful.'."<br/>\n";
 		echo 'Your user id is: '.$_SESSION['id'];
 	}else{
 		//echo "You are not logged in!";
 	}
 ?>
+<html>
+<body>
 <br><br>
-<center><label>Welcome to the Index Screen!</label></center>
-<form action= "includes/logout.inc.php">
-	<button>LOG OUT</button>
-</form>
-
 </body>
+<footer>
+	<div id="footer">
+	<nav>
+		<ul>
+			<label>Designed by Stephen Weatherly.</label>
+		</ul>
+	</nav>
+	</div>
+</footer>
 </html>
