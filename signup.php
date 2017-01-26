@@ -13,22 +13,20 @@
 	}
 
 	if (isset($_SESSION['id'])){
-		echo $_SESSION['id'];
+		//prevent user from signing up while logged in
+		echo "<p align='center'>You're already a member</p>";
 	}else{
-		//echo "You are not logged in!";
+		//enable sign up button if logged out
+		echo "<form action='includes/signup.inc.php' method='POST'>
+			<center><label>Sign Up Screen</label><br></center><br><br>
+			<center><label>Please fill out all forms below to join our site.</label><br></center><br><br>
+			<center><input type='text' name='first' placeholder='Firstname'><br><br></center>
+			<center><input type='text' name='last' placeholder='Lastname'><br><br></center>
+			<center><input type='text' name='uid' placeholder='Username'><br><br></center>
+			<center><input type='password' name='pwd' placeholder='Password'><br><br></center>
+			<center><button type='submit'>Sign Up</button><br></center>
+		</form>";
 	}
 ?>
-
-<br><br><br>
-
-<form action="includes/signup.inc.php" method="POST">
-	<center><label>Sign Up Screen</label><br></center><br><br>
-	<center><label>Please fill out all forms below to join our site.</label><br></center><br><br>
-	<center><input type="text" name="first" placeholder="Firstname"><br><br></center>
-	<center><input type="text" name="last" placeholder="Lastname"><br><br></center>
-	<center><input type="text" name="uid" placeholder="Username"><br><br></center>
-	<center><input type="password" name="pwd" placeholder="Password"><br><br></center>
-	<center><button type="submit">Sign Up</button><br></center>
-</form>
 </body>
 </html>
