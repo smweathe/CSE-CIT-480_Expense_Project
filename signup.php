@@ -11,22 +11,33 @@
 	}elseif (strpos($url,'error=username')!==false){
 		echo "Username already exists. Please choose another.";
 	}
-
 	if (isset($_SESSION['id'])){
 		//prevent user from signing up while logged in
+		header('Location: index.php');
 		echo "<p align='center'>You're already a member</p>";
-	}else{
-		//enable sign up button if logged out
-		echo "<form action='includes/signup.inc.php' method='POST'>
-			<center><label>Sign Up Screen</label><br></center><br><br>
-			<center><label>Please fill out all forms below to join our site.</label><br></center><br><br>
-			<center><input type='text' name='first' placeholder='Firstname'><br><br></center>
-			<center><input type='text' name='last' placeholder='Lastname'><br><br></center>
-			<center><input type='text' name='uid' placeholder='Username'><br><br></center>
-			<center><input type='password' name='pwd' placeholder='Password'><br><br></center>
-			<center><button type='submit'>Sign Up</button><br></center>
-		</form>";
 	}
 ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("label input").on("click",function(){
+		$("#sName").toggle(!this.checked);
+   	});	
+});
+</script>
+<html>
+<body>
+<form action='includes/signup.inc.php' method='POST'>
+	<center><label>Sign Up Screen</label><br></center><br><br>
+	<center><label>Please fill out all forms below to join our site.</label><br></center><br><br>
+	<center><input type='text' name='first' placeholder='Firstname'><br><br></center>
+	<center><input type='text' name='last' placeholder='Lastname'><br><br></center>
+	<center><input type='text' name='uid' placeholder='Username'><br><br></center>
+	<center><input type='password' name='pwd' placeholder='Password'><br><br></center>
+	<center><label id="sup"><input type="checkbox" name="isSupervisor" id="checkbox">Are you a supervisor?</label><br><br></center>
+	<center><input type='text' name='supervisorName' placeholder='Supervisor Name' id='sName'><br><br></center>
+	<center><button type='submit'>Sign Up</button><br></center>
+</form>
+<button id='butt'>Disappear</button>
 </body>
 </html>

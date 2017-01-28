@@ -23,7 +23,7 @@
 							<button>Log Out</button>
 					</form>";
 					//enables my Account button mapped to localhost
-					echo"<form action='http://localhost/expensemaster/account.php'>
+					echo"<form action='/account.php'>
 					    <button type='submit'>My Account</button>
 					</form>";
 				} else {
@@ -36,7 +36,7 @@
 
 					//echo "<li><a href='signup.php'>Sign Up</a></li>";
 
-					echo"<form action='http://localhost/expensemaster/signup.php'>
+					echo"<form action='/signup.php'>
 					    <button type='submit'>Sign Up</button>
 					</form>";
 				}
