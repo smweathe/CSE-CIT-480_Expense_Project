@@ -10,7 +10,9 @@
 		echo "<br><center><label>Fill all fields to sign up.</label></center><br<br>";
 	}elseif (strpos($url,'error=username')!==false){
 		echo "<br><center><label>Username is already taken. Please try another one!</label></center><br<br>";
-	}
+	}elseif (strpos($url,'error=email')!==false){
+                echo "<br><center><label>Email is already taken. Please try another one!</label></center><br<br>";
+        }
 	if (isset($_SESSION['id'])){
 		//prevent user from signing up while logged in
 		header('Location: index.php');
@@ -27,7 +29,8 @@ $(document).ready(function(){
 </script>
 <html>
 <body>
-<form action='includes/signup.inc.php' method='POST'>
+<form action='./includes/signup.inc.php' method='POST'>
+	
 	<br><center><label>Sign Up Screen</label><br></center><br><br>
 	<center><label>Please fill out all forms below to join our site.</label><br></center><br><br>
 	<center><input type='text' name='first' placeholder='Firstname'><br><br></center>
@@ -37,7 +40,7 @@ $(document).ready(function(){
 	<center><input type='password' name='pwd' placeholder='Password'><br><br></center>	
 	<center><label id="sup"><input type="checkbox" name="isSupervisor" id="checkbox">Are you a supervisor?</label><br><br></center>
 	<center><input type='text' name='supervisorName' placeholder='Supervisor Name' id='sName'><br><br></center>
-	<center><button type='submit'>Sign Up</button><br></center>
+	<center><button type='submit' name="submit">Sign Up</button><br></center>
 </form>
 </body>
 </html>
