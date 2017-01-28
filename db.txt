@@ -1,0 +1,22 @@
+CREATE TABLE `user` (
+  `user_id` int(255) NOT NULL AUTO_INCREMENT,
+  `user_username` varchar(255) NOT NULL,
+  `user_password` varchar(255) NOT NULL,
+  `user_fname` varchar(266) NOT NULL,
+  `user_lname` varchar(255) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `user_isSupervisior` int(1) NOT NULL,
+  `supervisors_id` int(255) DEFAULT NULL,
+  PRIMARY KEY (`user_id`),
+  KEY `supervisors_id` (`supervisors_id`),
+  CONSTRAINT `user_ibfk_1` FOREIGN KEY (`supervisors_id`) REFERENCES `supervisors` (`supervisors_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1 |
+
+CREATE TABLE `supervisors` (
+  `supervisors_id` int(255) NOT NULL AUTO_INCREMENT,
+  `user_id` int(255) NOT NULL,
+  PRIMARY KEY (`supervisors_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `supervisors_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
+
