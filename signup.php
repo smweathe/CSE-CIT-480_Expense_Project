@@ -39,7 +39,7 @@ $(document).ready(function(){
 	<center><input type='text' name='email' placeholder='Email'><br><br></center>
 	<center><input type='password' name='pwd' placeholder='Password'><br><br></center>	
 	<center><label id="sup"><input type="checkbox" name="isSupervisor" id="checkbox">Are you a supervisor?</label><br><br></center>
-	<center><input type='text' name='supervisorName' placeholder='Supervisor Name' id='sName'><br><br></center>
+	<center><input type='text' name='sID' placeholder='Supervisor ID' id='sName'><br><br></center>
 	<center><button type='submit' name="submit">Sign Up</button><br></center>
 </form>
 </body>
