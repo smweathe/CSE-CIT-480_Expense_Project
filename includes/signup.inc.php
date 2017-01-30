@@ -43,6 +43,10 @@ if(isset($_POST['submit'])){
 
 		header("location: ../index.php");
 	}else{
+		if(empty($supervisor)){
+			header("location: ../signup.php?error=empty");
+	                exit;
+		}
 		$sID = explode(":", $supervisor);
 		$sql = "INSERT INTO user (user_username, user_password, user_fname, user_lname, user_email, user_isSupervisior, supervisors_id) VALUES ('$uid', '$pwd', '$first', '$last', '$email', 0, '$sID[1]')";
 		$result = mysqli_query($conn,$sql);
