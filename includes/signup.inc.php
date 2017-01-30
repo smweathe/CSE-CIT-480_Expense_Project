@@ -30,8 +30,7 @@ if(isset($_POST['submit'])){
 	}
 
 	
-	if ($isSuper == "on"){
-		echo "Super is checked";	
+	if ($isSuper == "on"){	
 		$sql = "INSERT INTO user (user_username, user_password, user_fname, user_lname, user_email, user_isSupervisior) VALUES ('$uid', '$pwd', '$first', '$last', '$email', 1)"; 
 	        $result = mysqli_query($conn,$sql);
 
@@ -44,7 +43,6 @@ if(isset($_POST['submit'])){
 
 		header("location: ../index.php");
 	}else{
-		echo "Super is unchecked";
 		$sID = explode(":", $supervisor);
 		$sql = "INSERT INTO user (user_username, user_password, user_fname, user_lname, user_email, user_isSupervisior, supervisors_id) VALUES ('$uid', '$pwd', '$first', '$last', '$email', 0, '$sID[1]')";
 		$result = mysqli_query($conn,$sql);
