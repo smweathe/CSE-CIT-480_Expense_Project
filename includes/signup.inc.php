@@ -12,6 +12,7 @@ $supervisor=mysqli_real_escape_string($conn, $_POST['sID']);
 if(isset($_POST['submit'])){
 	if(empty($first) || empty($last) || empty($uid) || empty($email) || empty($pwd)){
 		header("location: ../signup.php?error=empty");		
+		exit;
 	}else{
         	$sql = "SELECT user_username FROM user WHERE user_username='$uid'";
 		$result = mysqli_query($conn, $sql);
@@ -27,7 +28,7 @@ if(isset($_POST['submit'])){
                         exit;
                 }
 	}
-        
+
 	
 	if ($isSuper == "on"){
 		echo "Super is checked";	
@@ -38,13 +39,14 @@ if(isset($_POST['submit'])){
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_row($result);	
 
-		$sql = "INSERT INTO supervisor (user_id) VALUES ('$row[0]')";
+		$sql = "INSERT INTO supervisors (user_id) VALUES ('$row[0]')";
 	        $result = mysqli_query($conn,$sql);
 
 		header("location: ../index.php");
 	}else{
 		echo "Super is unchecked";
-		$sql = "INSERT INTO user (user_username, user_password, user_fname, user_lname, user_email, user_isSupervisior, supervisor_id) VALUES ('$uid', '$pwd', '$first', '$last', '$email', 0, '$supervisor')";
+		$sID = explode(":", $supervisor);
+		$sql = "INSERT INTO user (user_username, user_password, user_fname, user_lname, user_email, user_isSupervisior, supervisors_id) VALUES ('$uid', '$pwd', '$first', '$last', '$email', 0, '$sID[1]')";
 		$result = mysqli_query($conn,$sql);
 		header("location: ../index.php");
 	}

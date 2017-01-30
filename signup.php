@@ -20,13 +20,35 @@
 	}
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 <script>
 $(document).ready(function(){
 	$("label input").on("click",function(){
 		$("#sName").toggle(!this.checked);
-   	});	
+  	});
 });
 </script>
+<script>
+$(document).ready(function(){
+        $("#sName").autocomplete({
+                source: 'includes/auto.inc.php',
+                minLength: 1,
+		change: function (event, ui) {
+                	if(!ui.item){
+               		 	//http://api.jqueryui.com/autocomplete/#event-change -
+                    		// The item selected from the menu, if any. Otherwise the property is null
+                   		 //so clear the item for force selection
+                    		$("#sName").val("");
+                	}
+		}
+
+        });
+});      
+</script>
+
+
 <html>
 <body>
 <form action='./includes/signup.inc.php' method='POST'>
@@ -39,7 +61,7 @@ $(document).ready(function(){
 	<center><input type='text' name='email' placeholder='Email'><br><br></center>
 	<center><input type='password' name='pwd' placeholder='Password'><br><br></center>	
 	<center><label id="sup"><input type="checkbox" name="isSupervisor" id="checkbox">Are you a supervisor?</label><br><br></center>
-	<center><input type='text' name='sID' placeholder='Supervisor ID' id='sName'><br><br></center>
+	<center><input type='text' name='sID' placeholder='Supervisor ID' id='sName' class="auto"><br><br></center>
 	<center><button type='submit' name="submit">Sign Up</button><br></center>
 </form>
 </body>
