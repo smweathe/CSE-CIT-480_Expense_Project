@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	/*prevent user from accessing this page
+	if no session is started*/
+	if (!isset($_SESSION['id']))
+    	header("Location: index.php");
 ?>
 
 <!DOCTYPE html>
