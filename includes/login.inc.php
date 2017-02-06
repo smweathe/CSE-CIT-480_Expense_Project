@@ -6,11 +6,11 @@ $uid=$_POST['uid'];
 $pwd=$_POST['pwd'];
 
 if (empty($uid)){
-	header("Location: ../login.php?error=empty");
+	header("Location: http://localhost/ExpenseMaster/login.php?error=empty");
 	exit();
 	}
 if (empty($pwd)){
-	header("Location: ../login.php?error=empty");
+	header("Location: http://localhost/ExpenseMaster/login.php?error=empty");
 	exit();
 }else{
 	$sql = "SELECT * FROM user WHERE uid='$uid' AND pwd='$pwd'";
@@ -18,8 +18,10 @@ if (empty($pwd)){
 
 	if(!$row=mysqli_fetch_assoc($result)){
 		echo "Your username or password is incorrect";
+		header("Location: http://localhost/ExpenseMaster/login.php?error=wrong");
 	}else{
 		$_SESSION['id'] = $row['id'];
 	}
 	header("Location: ../account.php");
+	echo 'uid';
 }
