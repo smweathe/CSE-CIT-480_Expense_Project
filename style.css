@@ -2,6 +2,40 @@
 *{
 	font-family: 'Open Sans', sans-serif;
 }
+.footer-container{
+	background-color: #2E3639;
+	color: white;
+	height: 120px;
+	text-align: center;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+.left{
+	text-align:left;
+	float:left;
+	background-color: red;
+	margin-left: 90px;
+	width: 300px;
+	padding: 0px 20px;
+}
+.right{
+	float:right;
+	text-align:right;
+	background-color: yellow;
+	margin-right: 90px;
+	width: 300px;
+	padding: 0px 20px;
+}
+.centered{
+	text-align:center;
+	background-color: orange;
+	margin-right: 90px;
+	margin-left: 90px;
+	width: auto;
+}
+
 
 html{box-sizing:border-box}*,*::after,*::before{box-sizing:inherit}
 .container{max-width:70%;margin-left:auto;margin-right:auto}
@@ -71,8 +105,16 @@ optgroup{font-weight:bold}
 table{border-collapse:collapse;border-spacing:0}
 td,th{padding:0}*,*:after,*:before{box-sizing:border-box}
 html{min-height:100%}
-body{min-height:100%;
-	font-size:14px;font-weight:normal;line-height:1.5;background:#fff;color:#383E40;-webkit-font-smoothing:antialiased}
+body{
+	min-height:100%;
+	font-size:14px;
+	font-weight:normal;
+	line-height:1.5;
+	background:#fff;
+	color:#383E40;
+	-webkit-font-smoothing:antialiased;
+}
+
 p{margin:0;margin-bottom:30px}
 a{-webkit-transition:color 0.1s linear;-moz-transition:color 0.1s linear;transition:color 0.1s linear}
 a:hover{color:#1f69c1}
@@ -101,6 +143,10 @@ h2{font-size:30px;color:#79589F}
 h2 a,h2 a:hover{color:#79589F}
 h3{font-size:24px;color:#79589F}
 h3 a,h3 a:hover{color:#79589F}
+h3.join{
+	display:inline;
+	margin-right: 20px;
+}
 h4{font-size:20px;color:#79589F;font-weight:bold}
 h4 a,h4 a:hover{color:#79589F}
 h5{font-size:18px;color:#79589F;font-weight:bold}
@@ -273,8 +319,20 @@ cite{font-style:normal;font-size:13px}
 .spinner>span:nth-child(1){-webkit-animation-delay:-0.16s;-moz-animation-delay:-0.16s;animation-delay:-0.16s}
 .spinner>span:nth-child(2){float:right}.btn-saving .spinner{width:15px;opacity:.6;margin-right:8px}
 .btn-saving .spinner .spinner>span{width:3px;height:3px}
-.alert{margin:10px auto;border:1px solid #d3d3d3;border-radius:6px;background:#F9F9FB;padding:10px 15px}
-.alert p{margin:0}.alert :last-child{margin-bottom:0}
+
+.alert{
+	margin:10px auto;
+	border:1px solid #d3d3d3;
+	border-radius:6px;
+	background:#F9F9FB;
+	padding:10px 15px
+}
+.alert p{
+	margin:0
+	}
+.alert :last-child{
+	margin-bottom:0
+}
 .alert.alert-error{color:white;background:#D64242;border-color:#d12d2d}
 .alert.alert-valid{color:white;background:#74C080;border-color:#62b870}
 .alert.alert-warning{color:white;background:#FA9F47;border-color:#f9922e}
@@ -307,24 +365,29 @@ cite{font-style:normal;font-size:13px}
 hr{height:1px;margin:2em 0;border:0;background-color:rgba(228,228,231,0);background-image:-webkit-linear-gradient(left, rgba(228,228,231,0), rgba(228,228,231,0.9) 10%, rgba(228,228,231,0.9) 90%, rgba(228,228,231,0));background-image:linear-gradient(to right, rgba(228,228,231,0), rgba(228,228,231,0.9) 10%, rgba(228,228,231,0.9) 90%, rgba(228,228,231,0))}
 
 body{
-	background-color:#3f2396;
+	background-color:#edeef0;
 }
 	
 .full-width{width:100%}
 .center{text-align:center}
 .text-left{text-align:left}
 .text-right{text-align:right}
-#signup, #login{
+#signup, #login, #reset{
 	padding:30px;
 	background:#F9F9FB;
 	border:1px solid #E4E4E7;
 	border-radius:5px;
 }
+.reset_page-body{
+	border: 1px solid #E4E4E7;
+    border-radius: 5px;
+    margin: 2px 150px 2px;
+    padding: 10px;
+}
 @media screen and (max-width: 600px){#signup{padding:15px}}
 .tos,.privacy,.hint,.newsletter{font-size:13px}
 .tos{text-align:center}
 .privacy p{margin-bottom:15px}
-.captcha{text-align:center}
 @media screen and (max-width: 415px){.captcha{position:relative;left:50%;width:1px;height:60px}}
 .captcha .g-recaptcha{transform:scale(0.984);transform-origin:0 0}
 @media screen and (max-width: 1100px){.captcha .g-recaptcha{transform:scale(0.785)}}
@@ -457,10 +520,11 @@ body{
 .selectize-option [class^="lang-icon-"]{display:inline-block;width:36px;height:24px;background-repeat:no-repeat;background-position:center;margin-bottom:-6px !important;margin-left:-9px}
 
 .header-main{
-	padding:80px 0 0;
+	padding:90px 0 0;
 	position:relative;
 	color:white;
-	background-color: rgba(0,0,0,0.2);
+	background-color: #2E3639;
+	border-bottom: #ff0f0f 3px solid;
 }
 .header-main h2{max-width:400px;margin:0 auto;text-align:center;color:white}
 .header-logo{
@@ -478,22 +542,40 @@ body{
 @media screen and (max-width: 768px){.header-logo{left:0;top:0}}
 @media screen and (max-width: 600px){.header-logo{background-size:130px auto}}
 .header-login{position:absolute;right:45px;top:20px}
-.header-login .btn{background:rgba(0,0,0,0.2)}
-.header-login .btn:hover{background:rgba(0,0,0,0.3)}
+.header-login .btn{background-color:rgb(48, 121, 237)}
+.header-login .btn:hover{background-color: #0861F0}
 @media screen and (max-width: 768px){.header-login{right:-5px;top:-5px}}
 @media screen and (max-width: 600px){.header-login span{display:none}}
-.signup-page{max-width:1000px;margin:0 auto;background:no-repeat center center;
-	background-size:937px 342px;background-position:center 5px}
+
+.signup-page{
+	/*max-width:1000px;*/
+	margin:0 auto;
+	background:no-repeat center center;
+	background-size:937px 342px;
+	background-position:center 5px
+}
 @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), 
 (min-resolution: 1.3dppx){.signup-page{background-image:url("")}}
 .signup-content{
+	min-height: 600px;
 	padding:45px;
+	margin-left: 90px;
+	margin-right: 90px;
 	/*background-image: url("./images/background.png");*/
 	background: white;
 }
 .signup-content:after{clear:both;content:"";display:table}@media screen and (max-width: 768px){.signup-content{padding:20px}}
 .signup-content header+hr{margin:50px 0}
-.signup-content .page-body,.signup-content .page-sidebar{float:left}.signup-content .page-body{width:calc(100% - 360px);padding-right:30px}
+.signup-content .page-body,.signup-content .page-sidebar{
+	float:left
+	}
+.signup-content .page-body{
+	width:calc(100% - 360px);
+	padding-right:30px;
+	/*background-image: url(./images/buisness.png);*/
+    background-size: cover;
+    height: auto;
+}
 .signup-content .page-sidebar{
 	width:360px
 }
