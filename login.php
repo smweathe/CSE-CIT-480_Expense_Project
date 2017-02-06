@@ -15,8 +15,9 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-type" />
     <title>Expense Master | Sign up</title>
     <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/44ff956945.css">
 	<!-- Favorite Icon -->
-	<link rel="shortcut icon" href="/images/specialicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Sign up for a free Expense Master account." name="description" />
     <!-- Logo Redirect to a page at # -->
@@ -27,29 +28,33 @@
       <div class="header-main">
         <a class="header-logo" href="http://localhost/ExpenseMaster/index.php"></a>
         <div class="header-login">
-			<!-- Login Redirect to a page at # 
-			<a class="btn btn-sm btn-alt" href="#">Log in</a>
-			 Logout Redirect to a page at # 
+			 <!--Home Button # -->
+			<a class="btn btn-sm btn-alt" href="./index.php">Home</a>
+			<!-- Logout Redirect to a page at # 
 			<a class="btn btn-sm btn-alt" href="#">Log Out</a>-->
         </div>
       </div>
       <div class="signup-content">
         <div class="benefits page-body">
           <h3>Welcome Back</h3>
-          <p>If you need to reset your password click here.</p>
+          <p>Enter your credentials to sign-in security and access your portal.</p>
         </div>
 		
-        <div class="signup page-sidebar"><p class="alert alert-error" id="fill-all-fields" style="display:none"></p>
-			   <form action="includes/login.inc.php" class="gtm_signup_register_form" id="login" method="post">
+    <div class="signup page-sidebar">
+         <form action="includes/login.inc.php" class="gtm_login_form" id="login" method="post">
     				<div class="input-group">
+            <center><i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i></center>
+            <br>
 					  <input type="text" class="required" name="uid" placeholder="username" tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
     				  <input type="password" class="required" name="pwd" placeholder="password" tabindex="5" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
     				  <br><br>
     				<input class="btn btn-alt full-width" href="http://localhost/ExpenseMaster/account.php" tabindex="7" type="submit" value="Sign In" />
-    				</div>
+            <br><br>
+            <center><a href="http://localhost/ExpenseMaster/forgotpwd.php">Forgot Password?</a></center>
 			   </form>
 		</div>
       </div>
-    </div><script src="//d2fjue5z6foteq.cloudfront.net/assets/315cc4a6724c52ae0b7b8f0104132a7094855698/main.js" type="text/javascript"></script>
+    </div>
+    <script src="//d2fjue5z6foteq.cloudfront.net/assets/315cc4a6724c52ae0b7b8f0104132a7094855698/main.js" type="text/javascript"></script>
   </body>
 </html>
