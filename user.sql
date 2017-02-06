@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2017 at 03:27 AM
+-- Generation Time: Feb 06, 2017 at 10:34 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -31,17 +31,18 @@ CREATE TABLE `user` (
   `first` varchar(128) NOT NULL,
   `last` varchar(128) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `bid` varchar(128) NOT NULL,
   `uid` varchar(128) NOT NULL,
-  `pwd` varchar(1000) NOT NULL
+  `pwd` varchar(1000) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `first`, `last`, `email`, `uid`, `pwd`) VALUES
-(1, 'steve', 'weatherly', 'smweathe@oakland.edu', 'admin', '1234'),
-(9, 'test', 'test', 'test@test.com', 'test', 'test');
+INSERT INTO `user` (`id`, `first`, `last`, `email`, `bid`, `uid`, `pwd`, `timestamp`) VALUES
+(1, 'Stephen', 'Weatherly', 'smweathe@oakland.edu', '0001', 'admin', '1234', '2017-02-06 21:29:15');
 
 --
 -- Indexes for dumped tables
@@ -61,7 +62,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
