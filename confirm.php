@@ -1,10 +1,3 @@
-<?php
-	session_start();
-	/*prevent user from accessing this page
-	if no session is started*/
-	if (!isset($_SESSION['id']))
-    	header("Location: index.php");
-?>
 
 <!DOCTYPE html>
 <html>
@@ -13,7 +6,7 @@
     <title>Expense Master | Sign up</title>
     <link href="style.css" rel="stylesheet" />
 	<!-- Favorite Icon -->
-	<link rel="shortcut icon" href="/images/specialicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Sign up for a free Expense Master account." name="description" />
     <!-- Logo Redirect to a page at # -->
