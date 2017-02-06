@@ -1,10 +1,13 @@
 <?php
-	session_start();
-	/*prevent user from accessing this page
-	if no session is started*/
-    if (!isset($_SESSION['id']))
-		header("Location: index.php");
+    include 'dbh.php';
+  	session_start();
+    /*prevent user from accessing this page
+    if no session is started*/
+    if (!isset($_SESSION['id'])){
+        header("Location: login.php");
+  }
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -13,7 +16,7 @@
     <title>Expense Master | Sign up</title>
     <link href="style.css" rel="stylesheet" />
 	<!-- Favorite Icon -->
-	<link rel="shortcut icon" href="/images/specialicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Sign up for a free Expense Master account." name="description" />
     <!-- Logo Redirect to a page at # -->
@@ -32,8 +35,14 @@
       </div>
       <div class="signup-content">
         <div class="benefits page-body">
-          <h3>Welcome to your Account Page</h3>
-          <h3>
+        <?php
+          //fetch user name to display on Account Page
+              $sql = "SELECT id, first, last FROM user";
+              $result= mysqli_query($conn,$sql);
+              $row = mysqli_fetch_assoc($result);
+              echo "Welcome Back " . $row['first']. " " . $row['last'];
+          ?>
+          <p>To begin please use the navigational bar on the side to jump to a new page</p>
         </div>		
         <div class="signup page-sidebar"><p class="alert alert-error" id="fill-all-fields" style="display:none"></p>
 		</div>
