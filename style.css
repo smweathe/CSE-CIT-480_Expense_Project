@@ -36,7 +36,26 @@
 	width: auto;
 }
 
+/**/
+.side-by-side {
+	width: 100%;
+	background-color: #2E3639;
+	height:30px;
+	margin: 0px;
+	padding: 0px;
+	font-size: 18px;
+}
+.side-by-side li {
+	display: inline;
+	float: left;
+}
+.side-by-side li a {
+	text-decoration: none;
+	color: white;
+	margin: 15px;
+}
 
+/**/
 html{box-sizing:border-box}*,*::after,*::before{box-sizing:inherit}
 .container{max-width:70%;margin-left:auto;margin-right:auto}
 .container::after{clear:both;content:"";display:table}
@@ -224,9 +243,7 @@ section-purple-dark h2 a:hover,.section-purple-dark h3 a,
 .tabs.tabs-terminal .tab-label-active,.tabs.tabs-terminal .tab-label.active,.tabs.tabs-terminal [type="radio"]:checked+.tab-label{background:#EAE9F1;color:#222;font-weight:normal;border-right:0;border-radius:0 0 4px 4px;border-top:1px solid rgba(0,0,0,0.2)}
 .tabs.tabs-terminal .tab-label{padding:8px 13px;border-right:1px solid rgba(17,17,17,0.2);font-weight:normal;font-size:16px;color:#fff;color:rgba(255,255,255,0.8)}
 .elements{width:100%;margin:0 auto}
-ul,ol{margin:0 0 30px 0;padding-left:30px}
-ul li>ul,ul li ol,ol li>ul,ol li ol{margin-top:15px}
-nav.nav-inline ul,.breadcrumbs ul,.list-inline{padding-left:0}
+nav.nav-inline ul,.breadcrumbs ul,.list-inline{padding-left:0px}
 nav.nav-inline ul li,.breadcrumbs ul li,.list-inline li{display:inline-block}
 nav ul,.breadcrumbs ul,.list-unstyled{padding-left:0;margin:0}
 nav ul ul,.breadcrumbs ul ul,.list-unstyled ul{margin:0;padding:0}
