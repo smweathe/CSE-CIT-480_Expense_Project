@@ -19,19 +19,19 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Sign up for a free Expense Master account." name="description" />
     <!-- Logo Redirect to a page at # -->
-	<link href="http://localhost/ExpenseMaster/index.php" rel="canonical" />
+	<link href="./index.php" rel="canonical" />
   </head>
   <body class="signup">
   <noscript><iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-JD26" style="display:none;visibility:hidden" width="0"></iframe></noscript>
     <div class="signup-page">
 
       <div class="header-main">
-        <a class="header-logo" href="http://localhost/ExpenseMaster/index.php"></a>
+        <a class="header-logo" href="./index.php"></a>
         <div class="header-login">
     			<!-- Login Redirect to a page at # 
     			<a class="btn btn-sm btn-alt" href="#">Log in</a>
     			 Logout Redirect to a page at # -->
-    			<a class="btn btn-sm btn-alt" href="http://localhost/ExpenseMaster/logout.php">Log Out</a>
+    			<a class="btn btn-sm btn-alt" href="./logout.php">Log Out</a>
         </div>
       </div>
       <!--
@@ -44,16 +44,16 @@
           -->
     <div class="signup-content" style="padding: 0px;">
           <ul class="side-by-side">
-            <li><a class="active" href="http://localhost/ExpenseMaster/account.php">My Account</a></li>
+            <li><a class="active" href="./account.php">My Account</a></li>
             <!--Modal form will pop up to submit a new expense-->
             <li><a href="#">New Expense</a></li>
-            <li><a href="http://localhost/ExpenseMaster/receipt.php">Upload Receipt</a></li>
-            <li><a href="http://localhost/ExpenseMaster/report.php">Run Report</a></li>
+            <li><a href="./receipt.php">Upload Receipt</a></li>
+            <li><a href="./report.php">Run Report</a></li>
           </ul>
     <div class="benefits page-body" style="padding: 30px;">
         <?php
           //fetch user name to display at the top
-              $sql = "SELECT id, first, last FROM user";
+              $sql = "SELECT id, first, last FROM user where id=".$_SESSION['id'];
               $result= mysqli_query($conn,$sql);
               $row = mysqli_fetch_assoc($result);
               echo "Welcome Back: " . $row['first']. " " . $row['last'];

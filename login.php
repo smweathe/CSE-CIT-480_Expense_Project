@@ -21,12 +21,12 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Sign up for a free Expense Master account." name="description" />
     <!-- Logo Redirect to a page at # -->
-	<link href="http://localhost/ExpenseMaster/index.php" rel="canonical" />
+	<link href="./index.php" rel="canonical" />
   </head>
   <body class="signup"><noscript><iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-JD26" style="display:none;visibility:hidden" width="0"></iframe></noscript>
     <div class="signup-page">
       <div class="header-main">
-        <a class="header-logo" href="http://localhost/ExpenseMaster/index.php"></a>
+        <a class="header-logo" href="./index.php"></a>
         <div class="header-login">
 			 <!--Home Button # -->
 			<a class="btn btn-sm btn-alt" href="./index.php">Home</a>
@@ -48,9 +48,9 @@
 					  <input type="text" class="required" name="uid" placeholder="username" tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
     				  <input type="password" class="required" name="pwd" placeholder="password" tabindex="5" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
     				  <br><br>
-    				<input class="btn btn-alt full-width" href="http://localhost/ExpenseMaster/account.php" tabindex="7" type="submit" value="Sign In" />
+    				<input class="btn btn-alt full-width" href="./account.php" tabindex="7" type="submit" value="Sign In" />
             <br><br>
-            <center><a href="http://localhost/ExpenseMaster/forgotpwd.php">Forgot Password?</a></center>
+            <center><a href="./forgotpwd.php">Forgot Password?</a></center>
 			   </form>
 		</div>
       </div>
