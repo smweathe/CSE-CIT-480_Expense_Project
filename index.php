@@ -6,6 +6,7 @@
 	}elseif (strpos($url,'error=username')!==false){
 		echo "Username already exists. Please choose another.";
 	}
+
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +30,7 @@
         <a class="header-logo" href="./index.php"></a>
         <div class="header-login">
 			<!-- Login Redirect to a page at # -->
-			<a class="btn btn-sm btn-alt" href="./login.php">Sign in</a>
+			<a class="btn btn-sm btn-alt" href="./login.php"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp; Sign In</a>
 			<!-- Logout Redirect to a page at # 
 			<a class="btn btn-sm btn-alt" href="#">Log Out</a>-->
         </div>
@@ -37,7 +38,7 @@
       <div class="signup-content">
         <div class="benefits page-body">
           <h3>Welcome to Expense Master</h3>
-          <p>Our goal is to improve the efficieny and accuracy of all company expense tracking.
+          <p>Our goal is to improve the efficiency and accuracy of all company expense tracking.
           For companies still using spreadsheet we offer .csv uploads and convert them to online forms.
           We are a cloud based solution for companies who need to track company spending.
           Joining today gives you access to all our tools and analytics for tracking company expenses.</p>
