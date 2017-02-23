@@ -1,7 +1,12 @@
 <?php
-//db conn string
-$conn=mysqli_connect("localhost","root","","login");
+	$server="localhost";
+	$username="root";
+	$pass="";
+	$db="login";
 
-if(!$conn){
-	die("Connection failed: ".mysqli_connect_error());
-}
+	//db conn string
+	$conn=mysqli_connect("$server","$username","$pass","$db");
+	if(!$conn){
+		die("Connection failed: ".mysqli_connect_error());
+	}
+?>
