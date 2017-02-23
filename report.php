@@ -8,13 +8,13 @@
   }
 ?>
 
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-type" />
     <title>Expense Master | Sign up</title>
     <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/44ff956945.css">
 	<!-- Favorite Icon -->
 	<link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -27,32 +27,33 @@
     <div class="signup-page">
 
       <div class="header-main">
-        <a class="header-logo" href="./index.php"></a>
+        <a class="header-logo" href="./account.php"></a>
         <div class="header-login">
     			<!-- Login Redirect to a page at # 
     			<a class="btn btn-sm btn-alt" href="#">Log in</a>
     			 Logout Redirect to a page at # -->
-    			<a class="btn btn-sm btn-alt" href="./logout.php">Log Out</a>
+    			<a class="btn btn-sm btn-alt" href="./logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Log Out</a>
         </div>
       </div>
-      <!--
-          <ul class="side-by-side">
-            <li><a class="active" href="#home">My Account</a></li>
-            <li><a href="#news">Submit Form</a></li>
-            <li><a href="#contact">View Forms</a></li>
-            <li><a href="#about">Message Supervisor</a></li>
-          </ul>
-          -->
     <div class="signup-content" style="padding: 0px;">
           <ul class="side-by-side">
-            <li><a class="active" href="./account.php">My Account</a></li>
-            <!--Modal form will pop up to submit a new expense-->
-            <li><a href="#">New Expense</a></li>
-            <li><a href="./receipt.php">Upload Receipt</a></li>
-            <li><a href="./report.php">Run Report</a></li>
+                <li><a class="active"  href="./account.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; My Account</a></li>
+                <!--Modal form will pop up to submit a new expense-->
+                <li><a href="./newexpense.php"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; New Expense</a></li>
+                <li><a href="./receipt.php"><i class="fa fa-cloud-upload" aria-hidden="true"></i>&nbsp; Upload Receipt</a></li>
+                <li><a href="./report.php"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp; Run Report</a></li>
           </ul>
-    <div class="benefits page-body" style="padding: 30px;">
-    <p>Welcome to the report page. Here you will find an overview of your recent expenses.</p>
+        <div class="benefits page-body" style="padding: 30px;">
+            <form action="#" class="gtm_expense_form" id="expenseform" method="post">
+            <div class="input-group">
+            <h3><center>Run Report</center></h3>
+            <center><i class="fa fa-file-text fa-5x" aria-hidden="true"></i></center>
+            <br>
+            <p>To run a report and view all user submitted expenses, click the run report button below. Clicking this button will show all of your expense history, their status, and the option to remove a submitted expense. If an expense is remove, we will automatically contact your company's supervisor letting them know of the change.</p> 
+            <p>Please Note: Once an expense is removed, it cannot be restored.</p>
+            <input class="btn btn-alt full-width" href="./account.php" tabindex="2" type="submit" value="Run Report" />
+            <br><br>
+         </form>
         </div>		
         <div class="signup page-sidebar"><p class="alert alert-error" id="fill-all-fields" style="display:none"></p>
 		</div>
