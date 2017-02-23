@@ -4,7 +4,7 @@
     /*prevent user from accessing this page
     if no session is started*/
     if (!isset($_SESSION['id'])){
-        header("Location: login.php");
+        header("Location: ./login.php");
   }
 ?>
 
@@ -46,8 +46,8 @@
               </ul>
     <div class="benefits page-body" style="padding:30px;">
         <?php
-          //fetch user name to display at the top
-              $sql = "SELECT id, first, last, email, bid, timestamp FROM user";
+          //fetch user name to display at the top;
+              $sql = "SELECT * FROM user WHERE id = '{$_SESSION['id']}'";
               $result= mysqli_query($conn,$sql);
               $row = mysqli_fetch_assoc($result);
           ?>
@@ -55,6 +55,8 @@
 
           <div class="user information" style="padding:30px; background:#F9F9FB; border:1px solid #E4E4E7; border-radius:5px;">
             <h3>Account Information on File</h3>
+            <p><?php echo "ID: " .$row['id'];?>
+            <p><?php echo "Username: " .$row['uid'];?>
             <p><?php echo "Registered Email Account: " .$row['email'];?>
             <p><?php echo "Registered Business ID: ".$row['bid'];?>
             <p><?php echo "Registered Date: ".$row['timestamp'];?>
@@ -69,9 +71,23 @@
     </div>		
         <div class="signup page-sidebar" style="padding:30px; background:#F9F9FB; border:1px solid #E4E4E7; border-radius:5px; margin-top: 127px;">
           <!--Fetch Company Information from DB -->
+          <?php
+           //fetch business related fields
+              //$sql1="SELECT user. FROM user, business";
+              $sql1="SELECT * FROM user, business WHERE id = '{$_SESSION['id']}' and user.bid = business.bid";
+              $result1=mysqli_query($conn,$sql1);
+              $row1=mysqli_fetch_assoc($result1)
+            ?>
           <h3>My Company Information</h3>
-          <p>Name: .$row['company']</p>
-          <p>Supervisor: .$row['sid_first']."".$row['sid_last']</p>
+          <p>
+            <?php 
+                   echo "Name: ".$row1['b_name']."<br>";
+                   echo "Supervisor: " .$row1['supervisor_first']." ".$row1['supervisor_last']."<br>";
+                   echo "Address: ".$row1['b_address']."<br>";
+                   echo "City: ".$row1['b_city']."<br>";
+                   echo "State: ".$row1['b_state']."<br>";
+              ?>
+          </p>
 		  </div>
   </div>
     </div><script src="//d2fjue5z6foteq.cloudfront.net/assets/315cc4a6724c52ae0b7b8f0104132a7094855698/main.js" type="text/javascript"></script>
