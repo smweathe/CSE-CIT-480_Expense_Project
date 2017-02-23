@@ -1,6 +1,8 @@
-
 *{
 	font-family: 'Open Sans', sans-serif;
+}
+.ui-tabs .ui-tabs-nav{
+	background: lightblue;
 }
 .footer-container{
 	background-color: #2E3639;
@@ -36,26 +38,31 @@
 	width: auto;
 }
 
-/**/
 .side-by-side {
 	width: 100%;
 	background-color: #2E3639;
-	height:30px;
+	height:33px;
 	margin: 0px;
 	padding: 0px;
 	font-size: 18px;
+	border-right:0px;
 }
 .side-by-side li {
 	display: inline;
 	float: left;
+	height: 33px;
 }
 .side-by-side li a {
 	text-decoration: none;
 	color: white;
-	margin: 15px;
+	border-right: 1px solid #bbb;
+	padding: 10px;
+}
+.side-by-side li a:hover{
+	background-color: white;
+	color: black;
 }
 
-/**/
 html{box-sizing:border-box}*,*::after,*::before{box-sizing:inherit}
 .container{max-width:70%;margin-left:auto;margin-right:auto}
 .container::after{clear:both;content:"";display:table}
@@ -389,7 +396,7 @@ body{
 .center{text-align:center}
 .text-left{text-align:left}
 .text-right{text-align:right}
-#signup, #login, #reset{
+#signup, #login, #reset, #expenseform, #list-group{
 	padding:30px;
 	background:#F9F9FB;
 	border:1px solid #E4E4E7;
@@ -576,8 +583,8 @@ body{
 .signup-content{
 	min-height: 600px;
 	padding:45px;
-	margin-left: 90px;
-	margin-right: 90px;
+	margin-left: 200px;
+	margin-right: 200px;
 	/*background-image: url("./images/background.png");*/
 	background: white;
 }
@@ -587,14 +594,14 @@ body{
 	float:left
 	}
 .signup-content .page-body{
-	width:calc(100% - 360px);
+	width:calc(100% - 400px);
 	padding-right:30px;
 	/*background-image: url(./images/buisness.png);*/
     background-size: cover;
     height: auto;
 }
 .signup-content .page-sidebar{
-	width:360px
+	width:400px
 }
 @media screen and (max-width: 1100px){.signup-content .page-body{width:calc(100% - 300px)}.signup-content .page-sidebar{width:300px}}
 @media screen and (max-width: 768px){.signup-content .page-body{width:100%;padding-right:0}.signup-content .page-sidebar{width:100%}}
@@ -623,5 +630,3 @@ body{
 .account-content .narrow{max-width:340px;margin-left:auto;margin-right:auto}
 .account-content .click-to-proceed{font-size:16px}
 .blocked-country *{text-align:left}
-
-
