@@ -7,6 +7,7 @@
 	}elseif (strpos($url,'error=username')!==false){
 		echo "Username already exists. Please choose another.";
 	}
+  //if a session is started prevent log in again
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +30,7 @@
         <a class="header-logo" href="./index.php"></a>
         <div class="header-login">
 			 <!--Home Button # -->
-			<a class="btn btn-sm btn-alt" href="./index.php">Home</a>
+			<a class="btn btn-sm btn-alt" href="./index.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
 			<!-- Logout Redirect to a page at # 
 			<a class="btn btn-sm btn-alt" href="#">Log Out</a>-->
         </div>
@@ -37,21 +38,23 @@
       <div class="signup-content">
         <div class="benefits page-body">
           <h3>Welcome Back</h3>
-          <p>Enter your credentials to sign-in security and access your portal.</p>
+          <p>Enter your credentials to sign-in securely and access your portal.</p>
+          <p>If you have forgotten your password, you can click the forgot password link and we'll reset it for you</p>
         </div>
 		
     <div class="signup page-sidebar">
+      <h5><center>Sign In to continue to ExpenseMaster</center></h5>
          <form action="includes/login.inc.php" class="gtm_login_form" id="login" method="post">
     				<div class="input-group">
-            <center><i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i></center>
-            <br>
-					  <input type="text" class="required" name="uid" placeholder="username" tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-    				  <input type="password" class="required" name="pwd" placeholder="password" tabindex="5" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            		<center><i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i></center>
+            		<br>
+					   <input type="text" class="required" name="uid" placeholder="&#61447; username" tabindex="4" style="margin-bottom: 5px; font-family: 'FontAwesome';"><sup class="required" title="Required"></sup>
+    				 <input type="password" class="required" name="pwd" placeholder="&#xf084; password" tabindex="5" style="margin-bottom: 5px; font-family: 'FontAwesome';"><sup class="required" title="Required"></sup>
     				  <br><br>
     				<input class="btn btn-alt full-width" href="./account.php" tabindex="7" type="submit" value="Sign In" />
             <br><br>
-            <center><a href="./forgotpwd.php">Forgot Password?</a></center>
-			   </form>
+            <center><a href="./forgotpwd.php" style="color: #0861F0;text-decoration: none;">Forgot Password?</a></center>
+		</form>
 		</div>
       </div>
     </div>
