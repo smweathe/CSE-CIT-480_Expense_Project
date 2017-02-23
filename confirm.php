@@ -1,10 +1,10 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-type" />
     <title>Expense Master | Sign up</title>
     <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/44ff956945.css">
 	<!-- Favorite Icon -->
 	<link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -20,7 +20,7 @@
 			<!-- Login Redirect to a page at # 
 			<a class="btn btn-sm btn-alt" href="#">Log in</a>
 			 Logout Redirect to a page at # -->
-			<a class="btn btn-sm btn-alt" href="./index.php">Home</a>
+			<a class="btn btn-sm btn-alt" href="./index.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Home</a>
         </div>
       </div>
       <div class="signup-content">
