@@ -16,13 +16,9 @@
 <html>
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-type" />
-    <title>Expense Master | Form</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Expense Master | Sign up</title>
     <link href="style.css" rel="stylesheet" />
-	<script src="jquery-3.1.1.min.js"></script>
-	
-	
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/44ff956945.css">
 	<!-- Favorite Icon -->
 	<link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -35,58 +31,35 @@
     <div class="signup-page">
 
       <div class="header-main">
-        <a class="header-logo" href="./index.php"></a>
+        <a class="header-logo" href="./account.php"></a>
         <div class="header-login">
     			<!-- Login Redirect to a page at # 
     			<a class="btn btn-sm btn-alt" href="#">Log in</a>
     			 Logout Redirect to a page at # -->
-    			<a class="btn btn-sm btn-alt" href="./logout.php">Log Out</a>
+    			<a class="btn btn-sm btn-alt" href="./logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Log Out</a>
         </div>
       </div>
-      <!--
-          <ul class="side-by-side">
-            <li><a class="active" href="#home">My Account</a></li>
-            <li><a href="#news">Submit Form</a></li>
-            <li><a href="#contact">View Forms</a></li>
-            <li><a href="#about">Message Supervisor</a></li>
-          </ul>
-          -->
     <div class="signup-content" style="padding: 0px;">
           <ul class="side-by-side">
-            <li><a class="active" href="./account.php">My Account</a></li>
-            <!--Modal form will pop up to submit a new expense-->
-            <li><a href="#">New Expense</a></li>
-            <li><a href="./receipt.php">Upload Receipt</a></li>
-            <li><a href="./report.php">Run Report</a></li>
+                <li><a class="active"  href="./account.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; My Account</a></li>
+                <!--Modal form will pop up to submit a new expense-->
+                <li><a href="./newexpense.php"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; New Expense</a></li>
+                <li><a href="./receipt.php"><i class="fa fa-cloud-upload" aria-hidden="true"></i>&nbsp; Upload Receipt</a></li>
+                <li><a href="./report.php"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp; Run Report</a></li>
           </ul>
     <div class="benefits page-body" style="padding: 30px;">
-	We've tried our best to fill it in. Please fill in the rest.
-	
-	<form action="" id="signup" style="width: 45%;" method="post">
-			<div class="form-group">
-				<label for="storeLabel">Name of Store</label>
-				<input type="text" class="form-control" id="storeName" placeholder="e.g., Mobil, Staples" value="<?php echo $name ?>">
-			</div>
-			<div class="form-group">
-			  <label for="example-date-input" class="col-2 col-form-label">Date of purchase</label>
-			  <div class="col-10">
-				<input class="form-control" type="date" id="date" value="<?php echo $date ?>">
-			  </div>
-			</div>
-			<div class="form-group">
-				<label for="subtotalLabel">Subtotal</label>
-				<input type="text" class="form-control" id="subtotal" placeholder="Subtotal">
-			</div>
-			<div class="form-group">
-				<label for="taxLabel">Tax on Purchase</label>
-				<input type="text" class="form-control" id="tax" placeholder="Taxes">
-			</div>
-			<br><br>
-		<input class="btn btn-alt full-width" href="./confirm.php" tabindex="7" type="submit" value="submit" />
-		</div>
-	</form>
-
-
+          <form action="#" class="gtm_expense_form" id="expenseform" method="post">
+            <div class="input-group">
+            <h3><center>Expense Form</center></h3>
+			<p>	We've tried our best to fill it in. Please fill in the rest.</p>
+            <br>
+            Merchant Name: <input type="text" class="required" name="mid" tabindex="1" style="margin-bottom: 5px" value="<?php echo $name ?>"><sup class="required" title="Required"></sup>
+            Date: <input type="date" class="required" name="date"  tabindex="2" style="margin-bottom: 5px" value="<?php echo $date ?>"><sup class="required" title="Required"></sup>
+            Total:<input type="number" class="required" name="total" placeholder="$0.00" tabindex="3" min="0.00" max="9999999.99" step"1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Additional Comments: <input type="text" name="comment" tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            <input class="btn btn-alt full-width" href="./account.php" tabindex="7" type="submit" value="Submit Form" />
+            <br><br>
+         </form>
     </div>		
     <div class="signup page-sidebar"><p class="alert alert-error" id="fill-all-fields" style="display:none"></p>
 		</div>

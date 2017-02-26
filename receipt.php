@@ -45,13 +45,13 @@
                 <li><a href="./report.php"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp; Run Report</a></li>
           </ul>
     <div class="benefits page-body" style="padding: 30px;">
-            <form action="#" class="gtm_expense_form" id="expenseform" method="post">
+            <form action="./includes/upload.inc.php" class="gtm_expense_form" id="expenseform" method="post" enctype="multipart/form-data">
             <div class="input-group">
             <h3><center>Receipt Upload</center></h3>
             <center><i class="fa fa-cloud-upload fa-5x" aria-hidden="true"></i></center>
             <br>
-            Upload Receipt: <input type="file" name="expense_receipt" tabindex="1" style="margin-bottom: 5px"><br><br>
-            <input class="btn btn-alt full-width" href="./account.php" tabindex="2" type="submit" value="Submit Receipt" />
+			<input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" tabindex="1" style="margin-bottom: 5px"><br><br>
+            <input class="btn btn-alt full-width" tabindex="2" type="submit" value="Submit Receipt" />
             <br><br>
          </form>
     </div>		
