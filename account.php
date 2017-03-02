@@ -13,6 +13,7 @@
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-type" />
     <title>Expense Master | Sign up</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/44ff956945.css">
 	<!-- Favorite Icon -->
@@ -63,10 +64,37 @@
           </div>
           <br>
           <div class="submitted_forms" style="padding:30px; background:#F9F9FB; border:1px solid #E4E4E7; border-radius:5px;">
-            <h3>Recently Submitted Forms</h3>
-            <p>Form 1 Placeholder:</p>
-            <p>Form 2 Placeholder:</p>
-            <p>Form 3 Placeholder:</p>
+			<h3>Submitted Forms</h3>
+			<?php
+				$id = $_SESSION['id'];
+				$query = "SELECT ExpenseId, ExpenseStatusID, ExpenseDate, TotalPrice  from expenses where UserID = '$id'";
+				$result = mysqli_query($conn, $query);
+			?>
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Expense ID</th>
+						<th>Amount</th>
+						<th>Date Submitted</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+				<?php
+				   while ($row = mysqli_fetch_array($result)) {
+					   echo "<tr>";
+					   echo "<td>".$row['ExpenseId']."</td>";
+					   echo "<td>".$row['TotalPrice']."</td>";
+					   echo "<td>".$row['ExpenseDate']."</td>";
+					   echo "<td>".$row['ExpenseStatusID']."</td>";
+					   echo "</tr>";
+				   }
+
+				?>
+				</tbody>
+			 </table>
+
           </div>
     </div>		
         <div class="signup page-sidebar" style="padding:30px; background:#F9F9FB; border:1px solid #E4E4E7; border-radius:5px; margin-top: 127px;">
