@@ -51,7 +51,7 @@
             <br>
             Merchant Name: <input type="text" class="required" name="merchant" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
             Date: <input type="date" class="required" name="date"  tabindex="2" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Total:<input type="number" class="required" name="total" placeholder="$0.00" tabindex="3" min="0.00" max="9999999.99" step"1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Total:<input type="decimal" class="required" name="total" placeholder="$0.00" tabindex="3" min="0.00" max="9999999.99" step="2" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
             Additional Comments: <input type="text" name="comment" tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
             Upload Receipt: <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" tabindex="5" style="margin-bottom: 5px"><br><br><sup class="required" title="Required"></sup>
             <input class="btn btn-alt full-width" href="./account.php" tabindex="7" type="submit" name="submit" value="Submit Form" />
