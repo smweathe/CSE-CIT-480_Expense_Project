@@ -71,7 +71,7 @@
 				$result = mysqli_query($conn, $query);
 			?>
 
-			<table class="table">
+			<table class="table table-condensed table-hover">
 				<thead>
 					<tr>
 						<th>Expense ID</th>
@@ -83,12 +83,24 @@
 				<tbody>
 				<?php
 				   while ($row = mysqli_fetch_array($result)) {
-					   echo "<tr>";
-					   echo "<td>".$row['ExpenseId']."</td>";
-					   echo "<td>".$row['TotalPrice']."</td>";
-					   echo "<td>".$row['ExpenseDate']."</td>";
-					   echo "<td>".$row['ExpenseStatusID']."</td>";
-					   echo "</tr>";
+						$time = strtotime($row['ExpenseDate']);
+						$date = date("m/d/y", $time);
+						$query = "SELECT ExpenseStatus from expensestatus where ExpenseStatusID='$row[ExpenseStatusID]'";
+						$res = mysqli_query($conn, $query);
+						$expStatus = mysqli_fetch_array($res);
+						if($expStatus['ExpenseStatus'] == "Approved"){
+							echo "<tr class='success'>";
+						}elseif($expStatus['ExpenseStatus'] == "Denied"){
+							echo "<tr class='danger'>";
+						}else{
+							echo "<tr class = 'warning'>";
+						}
+						
+						echo "<td>".$row['ExpenseId']."</td>";
+						echo "<td>".$row['TotalPrice']."</td>";
+						echo "<td>".$date."</td>";
+						echo "<td>".$expStatus['ExpenseStatus']."</td>";
+						echo "</tr>";
 				   }
 
 				?>

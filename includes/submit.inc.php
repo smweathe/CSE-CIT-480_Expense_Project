@@ -21,9 +21,10 @@ if(isset($_POST["submit"])) {
 	$imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
 	$id = $_SESSION['id'];
 
-    $check = getimagesize($temp);
+    $check = getimagesize($_FILES["fileToUpload"]["name"]);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
+		
         $uploadOk = 1;
     } else {
         echo "File is not an image.";
