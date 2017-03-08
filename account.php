@@ -100,6 +100,7 @@
 						echo "<td>".$row['TotalPrice']."</td>";
 						echo "<td>".$date."</td>";
 						echo "<td>".$expStatus['ExpenseStatus']."</td>";
+						echo "<td class='col-md-2'><form action='viewform.php' method='POST'><input type='hidden' name='tempId' value='".$row["ExpenseId"]."'/><input class='btn btn-sm btn-alt' type='submit' name='submit-btn' value='View Details' /></form></td>";
 						echo "</tr>";
 				   }
 
