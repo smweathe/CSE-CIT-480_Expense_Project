@@ -11,10 +11,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <meta content="text/html; charset=utf-8" http-equiv="Content-type" />
-    <title>Expense Master | Sign up</title>
-    <link href="style.css" rel="stylesheet" />
+    <title>ExpenseMaster - Time</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/44ff956945.css">
+    <link href="w3.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
   <!-- Favorite Icon -->
   <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -49,12 +52,20 @@
             <h3><center>Time Form</center></h3>
             <center><i class="fa fa-clock-o fa-5x" aria-hidden="true"></i></center>
             <br>
-            Hours: <input type="number" class="required" name="hours" tabindex="1" min="0.00" max="9999999.99" step"1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Rate: <input type="number" class="required" name="rate" tabindex="1" min="0.00" max="9999999.99" step"1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Date: <input type="date" class="required" name="date"  tabindex="2" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Total: <input type="number" class="required" name="total" placeholder="$0.00" tabindex="3" min="0.00" max="9999999.99" step"1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Additional Comments: <input type="text" name="comment" tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Upload Receipt: <input type="file" name="expense_receipt" tabindex="5" style="margin-bottom: 5px"><br><br>
+            Hours: <input type="text" class="required" name="hours" id="hours" value="" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Rate: <input type="text"  class="required" name="rate"  id="rate"  value="" onclick= "calc()" tabindex="2"  style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Total: <input type="text" class="required" name="total" id="total" value="" placeholder="$0.00" tabindex="3" disabled="disabled" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
+            /<!--Calculate Total Script-->
+            <script>
+            function calc(){
+                $("#hours,#rate").keyup(function () {
+                $('#total').val($('#hours').val() * $('#rate').val());
+                });
+            }
+            </script>
+            Date: <input type="date" class="required" name="date"  tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Additional Comments: <textarea name="comment" rows="5" tabindex="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
+            Upload Receipt: <input type="file" name="expense_receipt" tabindex="6" style="margin-bottom: 5px"><br><br>
             <input class="btn btn-alt full-width" href="./account.php" tabindex="7" type="submit" value="Submit Form" />
             <br><br>
          </form>
