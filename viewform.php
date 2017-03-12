@@ -18,6 +18,7 @@
     <title>Expense Master | View Form</title>
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/44ff956945.css">
+	
 	<!-- Favorite Icon -->
 	<link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -52,7 +53,7 @@
             <h3><center>View Submitted Form</center></h3>
             <center><i class="fa fa-money fa-5x" aria-hidden="true"></i></center>
 			<?php
-				$query = "SELECT BusinessName, ExpenseDate, TotalPrice from expenses where ExpenseId = '$id'";
+				$query = "SELECT BusinessName, ExpenseDate, TotalPrice, ExpenseFileName, ExpenseStatusID from expenses where ExpenseId = '$id'";
 				//ADD BUSINESS COMMENTS
 				$result = mysqli_query($conn, $query);
 				$row = mysqli_fetch_assoc($result)
@@ -63,14 +64,24 @@
             Date: <input type="date" class="required" name="date"  tabindex="2" style="margin-bottom: 5px" value="<?php $date = date("Y-m-d", strtotime($row['ExpenseDate'])); echo $date;?>"><sup class="required" title="Required"></sup>
             Total:<input type="decimal" class="required" name="total" placeholder="$0.00" tabindex="3" min="0.00" max="9999999.99" step="2" style="margin-bottom: 5px" value="<?php echo $row['TotalPrice'];?>"><sup class="required" title="Required"></sup>
             Additional Comments: <input type="text" name="comment" tabindex="4" style="margin-bottom: 5px" value="<?php echo "NEEDS SECTION IN DB"?>"><sup class="required" title="Required"></sup>
-            Upload Receipt: <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" tabindex="5" style="margin-bottom: 5px"><br><br><sup class="required" title="Required"></sup>
-            <input class="btn btn-alt full-width" href="./account.php" tabindex="7" type="submit" name="submit" value="Submit Form" />
-            <br><br>
+			<input type='hidden' name='tempId' value='<?php echo $id?>'/>
+			<?php
+				$query = "SELECT ExpenseStatus from expensestatus where ExpenseStatusID='$row[ExpenseStatusID]'";
+				$res = mysqli_query($conn, $query);
+				$expStatus = mysqli_fetch_array($res);
+				if($expStatus['ExpenseStatus'] == "Denied" || $expStatus['ExpenseStatus'] == "Pending"){
+					echo "<input class='btn btn-alt' style='margin-right: 5px' tabindex='7' type='submit' name='resubmit' value='Submit Changes' />";
+					echo "<input class='btn btn-alt' tabindex='8' type='submit' name='delete' value='Delete expense' />";
+				}
+			?>
+			<br><br>
+			</div>		
          </form>
-    </div>		
-    <div class="signup page-sidebar">
-		</div>
       </div>
+		<div class="signup page-sidebar" style="padding:30px; background:#F9F9FB; border:1px solid #E4E4E7; border-radius:2px; margin-top: 30px;">
+			<h3>Receipt Prievew</h3>
+			<img src="./uploads/<?php echo $row['ExpenseFileName']; ?>" />
+		</div>
     </div><script src="//d2fjue5z6foteq.cloudfront.net/assets/315cc4a6724c52ae0b7b8f0104132a7094855698/main.js" type="text/javascript"></script>
   </body>
 </html>
