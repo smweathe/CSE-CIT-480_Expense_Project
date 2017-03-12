@@ -33,10 +33,10 @@ if(isset($_POST["submit"])) {
         $uploadOk = 0;
     }
 	//Query
-	$merchant = $_POST['merchant'];
-	$date = $_POST['date'];
-	$total = $_POST['total'];
-	$comment = $_POST['comment'];
+	$merchant = mysqli_real_escape_string($conn, $_POST['merchant']);
+	$date = mysqli_real_escape_string($conn, $_POST['date']);
+	$total = mysqli_real_escape_string($conn, $_POST['total']);
+	$comment = mysqli_real_escape_string($conn, $_POST['comment']);
 	$query = "INSERT INTO expenses (UserId, ExpenseTypeID, ExpenseStatusId, BusinessName, ExpenseDate, TotalPrice, ExpenseFileName) VALUES ('$id', '1', '1', '$merchant', '$date', '$total', '$newfilename');";
 	$result= mysqli_query($conn,$query);
 	//Verification

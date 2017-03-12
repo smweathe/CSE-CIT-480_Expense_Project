@@ -18,14 +18,22 @@
     <title>Expense Master | View Form</title>
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/44ff956945.css">
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<!-- Favorite Icon -->
 	<link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Sign up for a free Expense Master account." name="description" />
     <!-- Logo Redirect to a page at # -->
 	<link href="./index.php" rel="canonical" />
+  <script>
+	$(document).ready(function(){
+		$('#input:edit').click(function)(){
+			$('input:merchant').attr("disabled", "");
+		}
+	});
+  </script>
   </head>
+  
   <body class="signup">
   <noscript><iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-JD26" style="display:none;visibility:hidden" width="0"></iframe></noscript>
     <div class="signup-page">
@@ -70,7 +78,7 @@
 				$res = mysqli_query($conn, $query);
 				$expStatus = mysqli_fetch_array($res);
 				if($expStatus['ExpenseStatus'] == "Denied" || $expStatus['ExpenseStatus'] == "Pending"){
-					echo "<input class='btn btn-alt' style='margin-right: 5px' tabindex='7' type='submit' name='resubmit' value='Submit Changes' />";
+					echo "<input class='btn btn-alt' style='margin-right: 5px' tabindex='7' id='edit' name='resubmit' value='Edit' />";
 					echo "<input class='btn btn-alt' tabindex='8' type='submit' name='delete' value='Delete expense' />";
 				}
 			?>
