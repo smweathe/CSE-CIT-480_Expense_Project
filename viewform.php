@@ -25,13 +25,17 @@
     <meta content="Sign up for a free Expense Master account." name="description" />
     <!-- Logo Redirect to a page at # -->
 	<link href="./index.php" rel="canonical" />
-  <script>
-	$(document).ready(function(){
-		$('#input:edit').click(function)(){
-			$('input:merchant').attr("disabled", "");
-		}
-	});
-  </script>
+	<script>
+		$( document ).ready(function() {
+			$('input:not([type=button],[type=submit], [type=hidden])').prop('disabled', true).css("background", "lightgrey");
+			$('#resubmit').hide();
+			$('#edit').click(function(){
+				$('#edit').hide();
+				$('#resubmit').show();
+				$('input:not([type=button],[type=submit],[id=supComment])').prop('disabled', false).css("background", "white");
+			});
+		});
+	</script>
   </head>
   
   <body class="signup">
@@ -61,25 +65,32 @@
             <h3><center>View Submitted Form</center></h3>
             <center><i class="fa fa-money fa-5x" aria-hidden="true"></i></center>
 			<?php
-				$query = "SELECT BusinessName, ExpenseDate, TotalPrice, ExpenseFileName, ExpenseStatusID from expenses where ExpenseId = '$id'";
+				$query = "SELECT BusinessName, ExpenseDate, TotalPrice, ExpenseFileName, ExpenseStatusID, expensesSupervisiorComment, expensesUserComment from expenses where ExpenseId = '$id'";
 				//ADD BUSINESS COMMENTS
 				$result = mysqli_query($conn, $query);
 				$row = mysqli_fetch_assoc($result)
 
 			?>
             <br>
-            Merchant Name: <input type="text" class="required" name="merchant" tabindex="1" style="margin-bottom: 5px" value="<?php echo $row['BusinessName'];?>"><sup class="required" title="Required"></sup>
-            Date: <input type="date" class="required" name="date"  tabindex="2" style="margin-bottom: 5px" value="<?php $date = date("Y-m-d", strtotime($row['ExpenseDate'])); echo $date;?>"><sup class="required" title="Required"></sup>
-            Total:<input type="decimal" class="required" name="total" placeholder="$0.00" tabindex="3" min="0.00" max="9999999.99" step="2" style="margin-bottom: 5px" value="<?php echo $row['TotalPrice'];?>"><sup class="required" title="Required"></sup>
-            Additional Comments: <input type="text" name="comment" tabindex="4" style="margin-bottom: 5px" value="<?php echo "NEEDS SECTION IN DB"?>"><sup class="required" title="Required"></sup>
+            Merchant Name: <input type="text" class="required disabled" id="merchant" name="merchant" tabindex="1" style="margin-bottom: 5px" value="<?php echo $row['BusinessName'];?>"><sup class="required" title="Required"></sup>
+            Date: <input type="date" class="required" id="date" name="date"  tabindex="2" style="margin-bottom: 5px" value="<?php $date = date("Y-m-d", strtotime($row['ExpenseDate'])); echo $date;?>"><sup class="required" title="Required"></sup>
+            Total:<input type="decimal" class="required" id="total" name="total" placeholder="$0.00" tabindex="3" min="0.00" max="9999999.99" step="2" style="margin-bottom: 5px" value="<?php echo $row['TotalPrice'];?>"><sup class="required" title="Required"></sup>
 			<input type='hidden' name='tempId' value='<?php echo $id?>'/>
 			<?php
-				$query = "SELECT ExpenseStatus from expensestatus where ExpenseStatusID='$row[ExpenseStatusID]'";
-				$res = mysqli_query($conn, $query);
-				$expStatus = mysqli_fetch_array($res);
-				if($expStatus['ExpenseStatus'] == "Denied" || $expStatus['ExpenseStatus'] == "Pending"){
-					echo "<input class='btn btn-alt' style='margin-right: 5px' tabindex='7' id='edit' name='resubmit' value='Edit' />";
-					echo "<input class='btn btn-alt' tabindex='8' type='submit' name='delete' value='Delete expense' />";
+				//1 = Pending, 2 = Approved, 3 = Denied
+				if($row['ExpenseStatusID'] == "1"){
+					echo "Additional Comments: <input type='text' id='comments' name='comment' tabindex='4' style='margin-bottom: 5px' value='".$row['expensesUserComment']."'<sup class='required' title='Required'></sup>";
+				}elseif($row['ExpenseStatusID'] == "2"){
+					echo "Supervisior Comments: <input type='text' id='supComment' name='comment' tabindex='4' style='margin-bottom: 5px' value='".$row['expensesSupervisiorComment']."'<sup class='required' title='Required'></sup>";
+				}elseif($row['ExpenseStatusID'] == "3"){
+					echo "Additional Comments: <input type='text' id='comments' name='comment' tabindex='4' style='margin-bottom: 5px' value='".$row['expensesUserComment']."'<sup class='required' title='Required'></sup>";
+					echo "Supervisior Comments: <input type='text' id='supComment' name='comment' tabindex='4' style='margin-bottom: 5px' value='".$row['expensesSupervisiorComment']."'<sup class='required' title='Required'></sup>";
+				}
+
+				if($row['ExpenseStatusID'] == "1" || $row['ExpenseStatusID'] == "3"){
+					echo "<input class='btn btn-alt' tabindex='8' type='button' name='edit' id='edit' value='edit' />";
+					echo "<input class='btn btn-alt' tabindex='8' type='submit' name='resubmit' id='resubmit' value='Resubmit' />";
+					echo "<input class='btn btn-alt' tabindex='8' type='submit' name='delete' id='delete' value='Delete expense' />";
 				}
 			?>
 			<br><br>

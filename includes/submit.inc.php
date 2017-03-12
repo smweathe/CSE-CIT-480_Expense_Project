@@ -26,7 +26,6 @@ if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
-		
         $uploadOk = 1;
     } else {
         echo "File is not an image.";
@@ -37,7 +36,7 @@ if(isset($_POST["submit"])) {
 	$date = mysqli_real_escape_string($conn, $_POST['date']);
 	$total = mysqli_real_escape_string($conn, $_POST['total']);
 	$comment = mysqli_real_escape_string($conn, $_POST['comment']);
-	$query = "INSERT INTO expenses (UserId, ExpenseTypeID, ExpenseStatusId, BusinessName, ExpenseDate, TotalPrice, ExpenseFileName) VALUES ('$id', '1', '1', '$merchant', '$date', '$total', '$newfilename');";
+	$query = "INSERT INTO expenses (UserId, ExpenseTypeID, ExpenseStatusId, BusinessName, ExpenseDate, TotalPrice, ExpenseFileName, expensesUserComment) VALUES ('$id', '1', '1', '$merchant', '$date', '$total', '$newfilename', '$comment');";
 	$result= mysqli_query($conn,$query);
 	//Verification
 	if ($uploadOk == 0) {
@@ -68,6 +67,7 @@ if(isset($_POST["delete"])){
 	if(!$result){
 		echo "query has failed!";
 		printf("Errormessage: %s\n", mysqli_error($conn));
+		die;
 	}else{
 		header("Location: ../account.php");
 		exit;
@@ -75,6 +75,20 @@ if(isset($_POST["delete"])){
 }	
 
 if(isset($_POST["resubmit"])){
-	
+	$id = $_SESSION['id'];
+	$merchant = mysqli_real_escape_string($conn, $_POST['merchant']);
+	$date = mysqli_real_escape_string($conn, $_POST['date']);
+	$total = mysqli_real_escape_string($conn, $_POST['total']);
+	$comment = mysqli_real_escape_string($conn, $_POST['comment']);
+	$replaceID = mysqli_real_escape_string($conn, $_POST['tempId']);
+	$query = "UPDATE expenses SET ExpenseTypeID='1', ExpenseStatusId='1', BusinessName='$merchant', ExpenseDate='$date', TotalPrice='$total', expensesUserComment='$comment' WHERE ExpenseId='$replaceID'";
+	$result= mysqli_query($conn,$query);
+	//Verification
+	if(!$result){
+		echo "query has failed!";
+		printf("Errormessage: %s\n", mysqli_error($conn));
+	}else{
+		header("Location: ../account.php");
+	}
 }	
 ?>
