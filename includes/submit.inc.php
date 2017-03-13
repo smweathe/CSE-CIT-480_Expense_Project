@@ -9,7 +9,7 @@ if (!isset($_SESSION['id'])){
 
 
 
-if(isset($_POST["submit"])) {
+if(isset($_POST["general"])) {
 	//File management
 	if(!file_exists($_FILES['fileToUpload']['tmp_name']) || !is_uploaded_file($_FILES['fileToUpload']['tmp_name'])) {
 		echo 'No upload';
@@ -72,7 +72,7 @@ if(isset($_POST["delete"])){
 		header("Location: ../account.php");
 		exit;
 	}
-}	
+}
 
 if(isset($_POST["resubmit"])){
 	$id = $_SESSION['id'];
@@ -90,5 +90,5 @@ if(isset($_POST["resubmit"])){
 	}else{
 		header("Location: ../account.php");
 	}
-}	
+}
 ?>

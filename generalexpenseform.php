@@ -56,7 +56,7 @@
                   Additional Comments: <textarea name="comment" rows="5" tabindex="4" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
                   Upload Receipt: <input type="file" accept="image/*" name="fileToUpload" tabindex="5" id="fileToUpload" tabindex="5" style="margin-bottom: 5px"><br><br>
                   
-                  <input class="btn btn-alt full-width" href="./account.php" tabindex="6" type="submit" name="submit" value="Submit Form" />
+                  <input class="btn btn-alt full-width" href="./account.php" tabindex="6" type="submit" name="general" value="Submit Form" />
 
                   <br><br>
                </form>
