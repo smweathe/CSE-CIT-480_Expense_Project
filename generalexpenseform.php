@@ -12,9 +12,11 @@
 <html>
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-type" />
-    <title>Expense Master | Sign up</title>
-    <link href="style.css" rel="stylesheet" />
+    <title>ExpenseMaster - General</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/44ff956945.css">
+    <link href="w3.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
 	<!-- Favorite Icon -->
 	<link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -38,29 +40,34 @@
     <div class="signup-content" style="padding: 0px;">
           <ul class="side-by-side">
                 <li><a class="active"  href="./account.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; My Account</a></li>
-                <!--Modal form will pop up to submit a new expense-->
                 <li><a href="./newexpense.php"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; New Expense</a></li>
                 <li><a href="./receipt.php"><i class="fa fa-cloud-upload" aria-hidden="true"></i>&nbsp; Upload Receipt</a></li>
                 <li><a href="./report.php"><i class="fa fa-file-text" aria-hidden="true"></i>&nbsp; Run Report</a></li>
           </ul>
-    <div class="benefits page-body" style="padding: 30px;">
-          <form action="./includes/submit.inc.php" class="gtm_expense_form" id="expenseform" method="post" enctype="multipart/form-data">
-            <div class="input-group">
-            <h3><center>General Expense Form</center></h3>
-            <center><i class="fa fa-money fa-5x" aria-hidden="true"></i></center>
-            <br>
-            Merchant Name: <input type="text" class="required" name="merchant" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Date: <input type="date" class="required" name="date"  tabindex="2" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Total:<input type="decimal" class="required" name="total" placeholder="$0.00" tabindex="3" min="0.00" max="9999999.99" step="2" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Additional Comments: <input type="text" name="comment" tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Upload Receipt: <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" tabindex="5" style="margin-bottom: 5px"><br><br><sup class="required" title="Required"></sup>
-            <input class="btn btn-alt full-width" href="./account.php" tabindex="7" type="submit" name="submit" value="Submit Form" />
-            <br><br>
-         </form>
-    </div>		
-    <div class="signup page-sidebar">
-		</div>
-      </div>
-    </div><script src="//d2fjue5z6foteq.cloudfront.net/assets/315cc4a6724c52ae0b7b8f0104132a7094855698/main.js" type="text/javascript"></script>
+          <div class="benefits page-body" style="padding: 30px;">
+          <h2>Fill Out a New General Expense</h2>
+                <form action="./includes/submit.inc.php" class="gtm_expense_form" id="expenseform" method="post" enctype="multipart/form-data">
+                  <div class="input-group">
+                  <center><i class="fa fa-money fa-5x" aria-hidden="true"></i></center>
+                  <br>
+                  Merchant Name: <input type="text" class="required" required value="" name="merchant" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                  Date: <input type="date" class="required" required value="" name="date"  tabindex="2" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                  Total:<input type="decimal" class="required" required value="" name="total" tabindex="3" placeholder="$0.00" tabindex="3" min="0.00" max="9999999.99" step="2" style="margin-bottom:5px"><sup class="required" title="Required"></sup>
+                  Additional Comments: <textarea name="comment" rows="5" tabindex="4" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
+                  Upload Receipt: <input type="file" accept="image/*" name="fileToUpload" tabindex="5" id="fileToUpload" tabindex="5" style="margin-bottom: 5px"><br><br>
+                  
+                  <input class="btn btn-alt full-width" href="./account.php" tabindex="6" type="submit" name="submit" value="Submit Form" />
+
+                  <br><br>
+               </form>
+          </div>		
+        </div>
+        <div class="signup page-sidebar">
+                <h3>This form can be used to fill out a general expense. Items may include food, logding, merchandise, and entertainment.</h3>
+                <h3>Please Note: Comments and receipt upload are not required for submission.</h3>
+        </div>
+
+    </div>
+    <script src="//d2fjue5z6foteq.cloudfront.net/assets/315cc4a6724c52ae0b7b8f0104132a7094855698/main.js" type="text/javascript"></script>
   </body>
 </html>
