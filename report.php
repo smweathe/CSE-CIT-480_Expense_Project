@@ -12,9 +12,11 @@
 <html>
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-type" />
-    <title>Expense Master | Sign up</title>
-    <link href="style.css" rel="stylesheet" />
+    <title>ExpenseMaster - Report</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/44ff956945.css">
+    <link href="w3.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
 	<!-- Favorite Icon -->
 	<link rel="shortcut icon" href="./images/icon.png" type="image/x-icon" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -49,8 +51,13 @@
             <h3><center>Run Report</center></h3>
             <center><i class="fa fa-file-text fa-5x" aria-hidden="true"></i></center>
             <br>
-            <p>To run a report and view all user submitted expenses, click the run report button below. Clicking this button will show all of your expense history, their status, and the option to remove a submitted expense. If an expense is remove, we will automatically contact your company's supervisor letting them know of the change.</p> 
+            <p>Running a report will show all of your expense history, status of them, and the option to remove submitted expenses. To run a report and view all user submitted expenses, click the run report button below.</p>
+            <br>
+            <p>If an expense is removed, we will automatically contact your company's supervisor letting them know of the change. Administrators will have 24 hours to
+            approve to deny the change.</p>
+            <br>
             <p>Please Note: Once an expense is removed, it cannot be restored.</p>
+            <br>
             <input class="btn btn-alt full-width" href="./account.php" tabindex="2" type="submit" value="Run Report" />
             <br><br>
          </form>
