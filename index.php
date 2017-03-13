@@ -35,49 +35,60 @@
 			<!-- Logout Redirect to a page at # 
 			<a class="btn btn-sm btn-alt" href="#">Log Out</a>-->
         </div>
+      </div>
 
 <!--Left Side-->
-      </div>
       <div class="signup-content">
         <div class="benefits page-body">
-          <h1 align="center">Welcome to ExpenseMaster</h1>
-          <h5 align="center">"Simplying Company Expense Tracking"</h5>
-            <div class="welcome1" style="background:#F9F9FB; padding: 10px; border:1px solid #E4E4E7; border-radius:5px;">Our goal is to improve the efficiency and accuracy of all company expense tracking.
+          <h1 style="margin: 0 0 20px 0;" align="center">Welcome to ExpenseMaster</h1>
+          <h5 style="margin: 0 0 20px 0;" align="center">"Simplying Company Expense Tracking"</h5>
+            <div class="welcome1" style="background:#F9F9FB; padding: 10px; border:1px solid #E4E4E7; border-radius:5px;">
+            <h3>Mission Statement</h3>
+            <p>Our goal is to improve the efficiency and accuracy of all company expense tracking.
               For companies still using spreadsheet we offer .csv uploads and convert them to online forms.
               We are a cloud based solution for companies who need to track company spending.
-              Joining today gives you access to all our tools and analytics for tracking company expenses.
+              Joining today gives you access to all our tools and analytics for tracking company expenses.</p>
               <br><br>
               <p align="center"><b>Join now and see what you have been missing!</b></p>
               <br>
+              <h6 style="margin: 0!important; text-align: center;">-The ExpenseMaster team</h6>
             </div>
             <br>
-            <div class="welcome2" style="background:#F9F9FB; padding: 10px; border:1px solid #E4E4E7; border-radius:5px;">Our goal is to improve the efficiency and accuracy of all company expense tracking.
+            <div class="welcome2" style="background:#F9F9FB; padding: 10px; border:1px solid #E4E4E7; border-radius:5px;">
+            <h3>Mission Statement</h3>
+            <p>Our goal is to improve the efficiency and accuracy of all company expense tracking.
               For companies still using spreadsheet we offer .csv uploads and convert them to online forms.
               We are a cloud based solution for companies who need to track company spending.
-              Joining today gives you access to all our tools and analytics for tracking company expenses.
+              Joining today gives you access to all our tools and analytics for tracking company expenses.</p>
               <br><br>
               <p align="center"><b>Join now and see what you have been missing!</b></p>
               <br>
+              <h6 style="margin: 0!important; text-align: center;">-The ExpenseMaster team</h6>
             </div>
             <br>
-            <div class="welcome3" style="background:#F9F9FB; padding: 10px; border:1px solid #E4E4E7; border-radius:5px;">Our goal is to improve the efficiency and accuracy of all company expense tracking.
+            <div class="welcome3" style="background:#F9F9FB; padding: 10px; border:1px solid #E4E4E7; border-radius:5px;">
+            <h3>Mission Statement</h3>
+            <p>Our goal is to improve the efficiency and accuracy of all company expense tracking.
               For companies still using spreadsheet we offer .csv uploads and convert them to online forms.
               We are a cloud based solution for companies who need to track company spending.
-              Joining today gives you access to all our tools and analytics for tracking company expenses.
+              Joining today gives you access to all our tools and analytics for tracking company expenses.</p>
               <br><br>
               <p align="center"><b>Join now and see what you have been missing!</b></p>
               <br>
+              <h6 style="margin: 0!important; text-align: center;">-The ExpenseMaster team</h6>
             </div>
             <br>
         </div>
 
 <!--Right Side-->
-        <div class="signup page-sidebar">
+      <div class="signup page-sidebar">
         <p class="alert alert-error" id="fill-all-fields" style="display:none"></p>
+
 			   <form action="includes/signup.inc.php" class="gtm_signup_register_form" id="signup" method="post">
-         <div class="info_header" id="joinnow">
-            <h3 align="center" class="join" style="background-color: #2E3639; padding: 0px; font-size: 24px;color: #fff; padding-left: 5px;" >Join Now</h3><i class="fa fa-pencil fa-2x" style="color:white" aria-hidden="true"></i><br>
-          </div>
+            <div class="info_header" id="joinnow">
+              <h3 align="center" class="join" style="background-color: #2E3639; padding: 0px; font-size: 24px;color: #fff; padding-left: 5px;" >Join Now</h3><i class="fa fa-pencil fa-2x" style="color:white" aria-hidden="true"></i><br>
+            </div>
+
     				<div class="input-group">
               <p>Please fill out the form below to create an account and join our thriving community. Signing up is always free, so join today to unlock all of our member benefits.</p>
               <br> 
@@ -90,21 +101,21 @@
               <input type="text" class="required" name="uid" placeholder="username" tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
     				  <input type="password" class="required" name="pwd" placeholder="password" tabindex="5" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
     				  <br><br>
-    				<input class="btn btn-alt full-width" href="./confirm.php" disabled="disabled" tabindex="7" type="submit" value="Create Account" />
+    				  <input class="btn btn-alt full-width" href="./confirm.php" disabled="disabled" tabindex="7" type="submit" value="Create Account">
     				</div>
 			   </form>
 		    </div>
       </div>
-    </div>
+</div>
     <script src="//d2fjue5z6foteq.cloudfront.net/assets/315cc4a6724c52ae0b7b8f0104132a7094855698/main.js" type="text/javascript"></script>
 
 <!-- Team Container -->
 <div class="w3-container w3-padding-64 w3-center" id="team">
   <h2>MEET OUR TEAM</h2>
 
-  <div class="w3-row"><br>
+  <div class="w3-row" style="border: 1px solid #E4E4E7; background: #F9F9FB; border-radius: 5px;"><br>
       <div class="w3-quarter">
-      <i class="fa fa-user fa-4x" aria-hidden="true"></i>
+        <i class="fa fa-user fa-4x" aria-hidden="true"></i>
         <!--<img src="/w3images/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">-->
         <h4 style="margin: 10px">Stephen Weatherly</h4>
         <p>Web Designer/Lead Programmer</p>
@@ -163,8 +174,11 @@
 
 <!--Google Maps-->
   <div id="google_map">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1466.7489807062302!2d-83.21554135463619!3d42.67199311499528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6b5d32ffab8de22a!2sOakland+University+-+Engineering+Center!5e0!3m2!1sen!2sus!4v1489189626784" width="1023" height="420" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <br>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1466.7529831561732!2d-83.21517120991751!3d42.67182351559072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6b5d32ffab8de22a!2sOakland+University+-+Engineering+Center!5e0!3m2!1sen!2sus!4v1489198341257" width="1023" height="420" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <br><br>
   </div>
+</body>
 
 <!--Footer-->
   <footer class="footer-container">
