@@ -1,6 +1,6 @@
 # CSE-CIT-480_Expense_Project
 <p align="center"><img src="https://github.com/smweathe/CSE-CIT-480_Expense_Project/blob/master/images/logo.png" alt="ExpenseMaster" height="50" ></p>
-Repository for 2017 Oakland University Senior Design project 
+Repository for 2017 Oakland University Senior Design project<br>
 By:Stephen Weatherly, Eric Cicci, Peter Lutz, Alex Tunis, Mike Trexler, Sean Ruta, and Boban Ljuljdjurovic
 
 We are building an online expense website that companies can use to fill out expense for their employees. We plan to support .csv upload for companies that still use them. The focus is to get the site up and running and if time permits develop an Android/iOS app. Below you can find our specific requirements we expect to meet in this project.
