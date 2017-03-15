@@ -2,8 +2,8 @@
 session_start();
 include '../dbh.php';
 
-$uid=$_POST['uid'];
-$pwd=$_POST['pwd'];
+$uid=mysqli_real_escape_string($conn, $_POST['uid']);
+$pwd=mysqli_real_escape_string($conn, $_POST['pwd']);
 
 if (empty($uid)){
 	header("Location: http://localhost/ExpenseMaster/login.php?error=empty");

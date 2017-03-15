@@ -2,12 +2,12 @@
 session_start();
 include '../dbh.php';
 
-$first=$_POST['first'];
-$last=$_POST['last'];
-$email=$_POST['email'];
-$bid=$_POST['bid'];
-$uid=$_POST['uid'];
-$pwd=$_POST['pwd'];
+$first=mysqli_real_escape_string($conn, $_POST['first']);
+$last=mysqli_real_escape_string($conn, $_POST['last']);
+$email=mysqli_real_escape_string($conn, $_POST['email']);
+$bid=mysqli_real_escape_string($conn, $_POST['bid']);
+$uid=mysqli_real_escape_string($conn, $_POST['uid']);
+$pwd=mysqli_real_escape_string($conn, $_POST['pwd']);
 
 if (empty($first)){
 	header("Location: ../index.php?error=empty");
