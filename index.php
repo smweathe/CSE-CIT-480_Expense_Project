@@ -7,6 +7,13 @@
 		echo "Username already exists. Please choose another.";
 	}
 
+  include 'dbh.php';
+  session_start();
+  /*redirect if session already established*/
+  if (isset($_SESSION['id'])){
+    header("Location: ./account.php");
+  }
+
 ?>
 
 <!DOCTYPE html>
