@@ -12,7 +12,7 @@
 <html>
   <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-type" />
-    <title>ExpenseMaster - General</title>
+    <title>ExpenseMaster - Multiform</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/44ff956945.css">
     <link href="w3.css" rel="stylesheet">
@@ -27,30 +27,60 @@
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
+      <style>
+          .input-group-general{
+              margin-left: 24px;
+              margin-right: 24px;
+          }
+          .input-group-airform{
+              margin-left: 24px;
+              margin-right: 24px;
+          }
+      </style>
+
   </head>
 
-<script>
- $(document).ready(function () {
-     //$('<div/>', {
-     //   'class' : 'input-group', html: GetHtml()
-     //}).appendTo('#container');
-     $('#addRow').click(function () {
-           $('<div/>', {
-               'class' : 'input-group', html: GetHtml()
-     }).hide().appendTo('#container').slideDown('fast');
-         
-     });
- })
- function GetHtml()
-{
-      var len = $('.input-group').length;
-    var $html = $('.input-group').clone();
-    $html.find('[name=merchant]')[0].name="merchant" + len;
-    $html.find('[name=date]')[0].name="date" + len;
-    $html.find('[name=total]')[0].name="total" + len;
-    return $html.html();    
-}
-</script>  
+	<script>
+        $(document).ready(function () {
+            $("#multi").hide();
+            //$('<div/>', {
+            //   'class' : 'input-group', html: GetHtml()
+            //}).appendTo('#container');
+            $('#addGeneral').click(function () {
+                $('<div/>', {'class' : 'input-group-general', html: GetGeneralHtml()}).hide().appendTo('#container').slideDown('fast');
+                $("#multi").show();
+            });
+            $('#addAir').click(function () {
+                $('<div/>', {'class' : 'input-group-airform', html: GetAirHtml()}).hide().appendTo('#container').slideDown('fast');
+                $("#multi").show();
+            });
+
+        })
+
+    function GetGeneralHtml(){
+		var len = $('.input-group-general').length;
+		var $html = $('.cloneGeneral').clone();
+		$html.find('[name=merchant]')[0].name="merchant" + len;
+		$html.find('[name=generalDate]')[0].name="generalDate" + len;
+		$html.find('[name=generalTotal]')[0].name="generalTotal" + len;
+		$html.find('[name=generalComment]')[0].name="generalComment" + len;
+        $html.find('[name=generalExpense_Receipt]')[0].name="generalExpense_Receipt" + len;
+        return $html.html();    
+	}
+     
+	 function GetAirHtml(){
+        var len = $('.input-group-airform').length;
+        var $html = $('.cloneAir').clone();
+        $html.find('[name=distance]')[0].name="distance" + len;
+        $html.find('[name=airliner]')[0].name="airliner" + len;
+        $html.find('[name=starting_loc]')[0].name="starting_loc" + len;
+        $html.find('[name=airTotal]')[0].name="airTotal" + len;
+        $html.find('[name=airDate]')[0].name="airDate" + len;
+        $html.find('[name=airComment]')[0].name="airComment" + len;
+        $html.find('[name=airExpense_Receipt]')[0].name="airExpense_Receipt" + len;
+        return $html.html();    
+	}
+	</script>  
 
   <body class="signup">
   <noscript><iframe height="0" src="//www.googletagmanager.com/ns.html?id=GTM-JD26" style="display:none;visibility:hidden" width="0"></iframe></noscript>
@@ -75,25 +105,51 @@
         <div class="benefits page-body" style="padding: 30px;">
 			<h2>Fill Out a New General Expense</h2>
                 <form action="./includes/submit.inc.php" class="gtm_expense_form" id="expenseform" method="post" enctype="multipart/form-data">
-					<div class="input-group">
-						<center><i class="fa fa-money fa-5x" aria-hidden="true"></i></center>
-						<br>
-						Merchant Name: <input type="text" class="required" required value="" name="merchant" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-						Date: <input type="date" class="required" required value="" name="date"  tabindex="2" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-						Total:<input type="decimal" class="required" required value="" name="total" tabindex="3" placeholder="$0.00" tabindex="3" min="0.00" max="9999999.99" step="2" style="margin-bottom:5px"><sup class="required" title="Required"></sup>
-						Additional Comments: <textarea name="comment" rows="5" tabindex="4" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
-						Upload Receipt: <input type="file" accept="image/*" name="fileToUpload" tabindex="5" id="fileToUpload" tabindex="5" style="margin-bottom: 5px"><br><br>
-					</div>	
 					<div id="container"></div>		
-					<input class="btn btn-alt full-width" href="./account.php" tabindex="6" type="submit" name="general" value="Submit Form" />
+					<input class="btn btn-alt full-width" href="./account.php" type="submit" id="multi" name="multi" value="Submit Form" />
 					<br><br>
 
-					<input class="btn btn-alt full-width" href="#" type="button" id="addRow" name="general" value="Add additional form" />			 
+					<input class="btn btn-alt full-width" href="#" type="button" id="addGeneral" name="general" value="Add a General form" />			 
+					<input class="btn btn-alt full-width" href="#" type="button" id="addAir" name="air" value="Add an Air Travel form" />	
+                                
+            <div class="cloneGeneral" style="display: none;">
+                <center><i class="fa fa-money fa-5x" aria-hidden="true"></i></center>
+                <br>
+                Merchant Name: <input type="text" class="required" required value="" name="merchant" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Date: <input type="date" class="required" required value="" name="generalDate" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Total:<input type="decimal" class="required" required value="" name="generalTotal" placeholder="$0.00" min="0.00" max="9999999.99" step="2" style="margin-bottom:5px"><sup class="required" title="Required"></sup>
+                Additional Comments: <textarea name="generalComment" rows="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
+                Upload Receipt: <input type="file" accept="image/*" name="generalExpense_Receipt" id="fileToUpload" style="margin-bottom: 5px"><br><br>
+			</div>	
+            <div class="cloneAir" style="display: none;">            
+                <center><i class="fa fa-plane fa-5x" aria-hidden="true"></i></center>
+                <br>
+                Distance(in miles): <input type="text" class="required" name="distance" id="distance" autocomplete="false" value="" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Airliner Company: <input type="text" class="required" name="airliner" id="airliner" autocomplete="false" value="" tabindex="2" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Starting Location: <input type="text" class="required" name="starting_loc" id="starting_loc" autocomplete="false" value="" tabindex="3" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Ending Location: <input type="text" class="required" name="ending_loc" id="ending_loc" autocomplete="false" value="" tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Total: <input type="text" class="required" name="airTotal" id="total" value="" placeholder="$0.00" tabindex="5"  style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
+                <script>
+                //User can only enter numbers and decimal
+                  $(document).ready(function () {
+                    //called when key is pressed in textbox
+                    $("#distance").keypress(function (e) {
+                       //if the letter is not digit then display error and don't type anything
+                       if (e.which != 46 && e.which > 31 && (e.which < 48 || e.which > 57)) {
+                          //display error message
+                          $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                                 return false;
+                      }
+                     });
+                  });
+                </script>
+                Date: <input type="date" class="required" name="airDate"  tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Additional Comments: <textarea name="airComment" rows="5" tabindex="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
+                Upload Receipt: <input type="file" name="airExpense_Receipt" tabindex="6" style="margin-bottom: 5px"><br><br>      
+            </div>
 				</form>
-
                 <br><br>
-				
-			</div>
+        </div>
 			
         <div class="signup page-sidebar">
                 <h3>This form can be used to fill out a general expense. Items may include food, logding, merchandise, and entertainment.</h3>

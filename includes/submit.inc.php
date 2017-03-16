@@ -52,10 +52,17 @@ if(isset($_POST["general"])) {
 			exit;
 		} else {
 			echo "Sorry, there was an error uploading your file.";
-    }
+		}
+	}
 }
 
+if(isset($_POST["multi"])){
+	$count = 0;
+	while(isset($_POST['merchant'.($count > 0 ? $count : "")])){
+		echo "1";
+		$count++;
 	}
+}
 
 if(isset($_POST["delete"])){
 	if(!isset($_POST["tempId"])){
