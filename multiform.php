@@ -27,12 +27,17 @@
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
+
       <style>
           .input-group-general{
               margin-left: 24px;
               margin-right: 24px;
           }
           .input-group-airform{
+              margin-left: 24px;
+              margin-right: 24px;
+          }
+          .input-group-time{
               margin-left: 24px;
               margin-right: 24px;
           }
@@ -49,10 +54,21 @@
             $('#addGeneral').click(function () {
                 $('<div/>', {'class' : 'input-group-general', html: GetGeneralHtml()}).hide().appendTo('#container').slideDown('fast');
                 $("#multi").show();
+                moved = true;
+                                var element = document.getElementById("multi");
+                element.scrollIntoView();
             });
             $('#addAir').click(function () {
                 $('<div/>', {'class' : 'input-group-airform', html: GetAirHtml()}).hide().appendTo('#container').slideDown('fast');
                 $("#multi").show();
+                                var element = document.getElementById("multi");
+                element.scrollIntoView();
+            });
+            $('#addTime').click(function () {
+                $('<div/>', {'class' : 'input-group-time', html: GetTimeHtml()}).hide().appendTo('#container').slideDown('fast');
+                $("#multi").show();
+                var element = document.getElementById("multi");
+                element.scrollIntoView();
             });
 
         })
@@ -80,6 +96,17 @@
         $html.find('[name=airExpense_Receipt]')[0].name="airExpense_Receipt" + len;
         return $html.html();    
 	}
+        
+    function GetTimeHtml(){
+        var len = $('.input-group-time').length;
+        var $html = $('.cloneTime').clone();
+        $html.find('[name=hours]')[0].name="hours" + len;
+        $html.find('[name=rate]')[0].name="rate" + len;
+        $html.find('[name=timeTotal]')[0].name="timeTotal" + len;
+        $html.find('[name=timeDate]')[0].name="timeDate" + len;
+        $html.find('[name=timeComment]')[0].name="timeComment" + len;
+        return $html.html();    
+	}
 	</script>  
 
   <body class="signup">
@@ -95,7 +122,7 @@
     			<a class="btn btn-sm btn-alt" href="./logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Log Out</a>
         </div>
       </div>
-    <div class="signup-content" style="padding: 0px;">
+    <div id="test" class="signup-content" style="padding: 0px;">
 		<ul class="side-by-side">
             <li><a class="active"  href="./account.php"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; My Account</a></li>
             <li><a href="./newexpense.php"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp; New Expense</a></li>
@@ -111,6 +138,7 @@
 
 					<input class="btn btn-alt full-width" href="#" type="button" id="addGeneral" name="general" value="Add a General form" />			 
 					<input class="btn btn-alt full-width" href="#" type="button" id="addAir" name="air" value="Add an Air Travel form" />	
+                    <input class="btn btn-alt full-width" href="#" type="button" id="addTime" name="time" value="Add a Time form" />	
                                 
             <div class="cloneGeneral" style="display: none;">
                 <center><i class="fa fa-money fa-5x" aria-hidden="true"></i></center>
@@ -124,11 +152,11 @@
             <div class="cloneAir" style="display: none;">            
                 <center><i class="fa fa-plane fa-5x" aria-hidden="true"></i></center>
                 <br>
-                Distance(in miles): <input type="text" class="required" name="distance" id="distance" autocomplete="false" value="" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                Airliner Company: <input type="text" class="required" name="airliner" id="airliner" autocomplete="false" value="" tabindex="2" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                Starting Location: <input type="text" class="required" name="starting_loc" id="starting_loc" autocomplete="false" value="" tabindex="3" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                Ending Location: <input type="text" class="required" name="ending_loc" id="ending_loc" autocomplete="false" value="" tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                Total: <input type="text" class="required" name="airTotal" id="total" value="" placeholder="$0.00" tabindex="5"  style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
+                Distance(in miles): <input type="text" class="required" name="distance" id="distance" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Airliner Company: <input type="text" class="required" name="airliner" id="airliner" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Starting Location: <input type="text" class="required" name="starting_loc" id="starting_loc" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Ending Location: <input type="text" class="required" name="ending_loc" id="ending_loc" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Total: <input type="text" class="required" name="airTotal" id="total" value="" placeholder="$0.00" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
                 <script>
                 //User can only enter numbers and decimal
                   $(document).ready(function () {
@@ -143,10 +171,27 @@
                      });
                   });
                 </script>
-                Date: <input type="date" class="required" name="airDate"  tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                Additional Comments: <textarea name="airComment" rows="5" tabindex="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
-                Upload Receipt: <input type="file" name="airExpense_Receipt" tabindex="6" style="margin-bottom: 5px"><br><br>      
+                Date: <input type="date" class="required" name="airDate" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Additional Comments: <textarea name="airComment" rows="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
+                Upload Receipt: <input type="file" name="airExpense_Receipt" style="margin-bottom: 5px"><br><br>      
             </div>
+            <div class="cloneTime" style="display: none;">
+                <center><i class="fa fa-clock-o fa-5x" aria-hidden="true"></i></center>
+                <br>
+                Hours: <input type="text" class="required" name="hours" id="hours" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Rate: <input type="text"  class="required" name="rate"  id="rate"  value="" onclick= "calc()" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Total: <input type="text" class="required" name="timeTotal" id="total" value="" placeholder="$0.00" disabled="disabled" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
+                /<!--Calculate Total Script-->
+                <script>
+                function calc(){
+                    $("#hours,#rate").keyup(function () {
+                    $('#total').val($('#hours').val() * $('#rate').val());
+                    });
+                }
+                </script>
+                Date: <input type="date" class="required" name="timeDate" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Additional Comments: <textarea name="timeComment" rows="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>        
+            </div>        
 				</form>
                 <br><br>
         </div>
@@ -156,6 +201,7 @@
                 <h3>Please Note: Comments and receipt upload are not required for submission.</h3>
         </div>
     </div>
+        <div id="footer"></div>
     <script src="//d2fjue5z6foteq.cloudfront.net/assets/315cc4a6724c52ae0b7b8f0104132a7094855698/main.js" type="text/javascript"></script>
   </body>
 </html>
