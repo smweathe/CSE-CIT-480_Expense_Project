@@ -52,15 +52,15 @@
             <div class="input-group">
             <center><i class="fa fa-car fa-5x" aria-hidden="true"></i></center>
             <br>
-            Distance(in miles): <input type="text" class="required" name="distance" id="distance" required value="" autocomplete="false" value="" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Rate(0.54 is default): <input type="text"  class="required" name="rate"  id="rate" required value="" autocomplete="false" value="" onclick= "calc()" tabindex="2"  style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Total: <input type="text" class="required" name="total" id="total" value="" placeholder="$0.00" tabindex="3" disabled="disabled" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
+            Distance(in miles): <input type="text" class="required" name="distanceDistance" id="distanceDistance" required value="" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Rate(0.54 is default): <input type="text"  class="required" name="distanceRate"  id="distanceRate" required value="" autocomplete="false" value="" onclick= "calc()" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Total: <input type="text" class="required" name="distanceTotal" id="distanceTotal" value="" placeholder="$0.00" disabled="disabled" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
             
             <script>
             //User can only enter numbers and decimal
               $(document).ready(function () {
                 //called when key is pressed in textbox
-                $("#distance,#rate").keypress(function (e) {
+                $("#distanceDistance,#distanceRate").keypress(function (e) {
                    //if the letter is not digit then display error and don't type anything
                    if (e.which != 46 && e.which > 31 && (e.which < 48 || e.which > 57)) {
                       //display error message
@@ -72,16 +72,16 @@
 
             //Calculate Total
             function calc(){
-                $("#distance,#rate").keyup(function () {
-                $('#total').val($('#distance').val() * $('#rate').val());
+                $("#distanceDistance,#distanceRate").keyup(function () {
+                $('#distanceTotal').val($('#distanceDistance').val() * $('#distanceRate').val());
                 });
             }
             </script>
 
-            Date: <input type="date" class="required" name="date" required value=""  tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Additional Comments: <textarea name="comment" rows="5" tabindex="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
-            Upload Receipt: <input type="file" name="expense_receipt" tabindex="6" style="margin-bottom: 5px"><br><br>
-            <input class="btn btn-alt full-width" href="./account.php" tabindex="7" type="submit" value="Submit Form" />
+            Date: <input type="date" class="required" name="distanceDate" required value=""  style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Additional Comments: <textarea name="distanceComment" rows="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
+            Upload Receipt: <input type="file" name="distanceExpense_receipt" style="margin-bottom: 5px"><br><br>
+            <input class="btn btn-alt full-width" href="./account.php" type="submit" value="Submit Form" />
             <br><br>
          </form>
     </div>   

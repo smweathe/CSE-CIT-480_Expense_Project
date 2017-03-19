@@ -51,17 +51,17 @@
             <div class="input-group">
             <center><i class="fa fa-plane fa-5x" aria-hidden="true"></i></center>
             <br>
-            Distance(in miles): <input type="text" class="required" name="distance" id="distance" autocomplete="false" value="" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Airliner Company: <input type="text" class="required" name="airliner" id="airliner" autocomplete="false" value="" tabindex="2" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Starting Location: <input type="text" class="required" name="starting_loc" id="starting_loc" autocomplete="false" value="" tabindex="3" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Ending Location: <input type="text" class="required" name="ending_loc" id="ending_loc" autocomplete="false" value="" tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Total: <input type="text" class="required" name="total" id="total" value="" placeholder="$0.00" tabindex="5"  style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
+            Distance(in miles): <input type="text" class="required" name="airDistance" id="airDistance" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Airliner Company: <input type="text" class="required" name="airliner" id="airliner" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Starting Location: <input type="text" class="required" name="starting_loc" id="starting_loc" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Ending Location: <input type="text" class="required" name="ending_loc" id="ending_loc" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Total: <input type="text" class="required" name="airTotal" id="airTotal" value="" placeholder="$0.00" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
             
             <script>
             //User can only enter numbers and decimal
               $(document).ready(function () {
                 //called when key is pressed in textbox
-                $("#distance").keypress(function (e) {
+                $("#airDistance").keypress(function (e) {
                    //if the letter is not digit then display error and don't type anything
                    if (e.which != 46 && e.which > 31 && (e.which < 48 || e.which > 57)) {
                       //display error message
@@ -72,10 +72,10 @@
               });
             </script>
 
-            Date: <input type="date" class="required" name="date"  tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Additional Comments: <textarea name="comment" rows="5" tabindex="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
-            Upload Receipt: <input type="file" name="expense_receipt" tabindex="6" style="margin-bottom: 5px"><br><br>
-            <input class="btn btn-alt full-width" href="./account.php" tabindex="7" type="submit" value="Submit Form" />
+            Date: <input type="date" class="required" name="airDate"  style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Additional Comments: <textarea name="airComment" rows="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
+            Upload Receipt: <input type="file" name="airExpense_receipt" style="margin-bottom: 5px"><br><br>
+            <input class="btn btn-alt full-width" href="./account.php" type="submit" value="Submit Form" />
             <br><br>
          </form>
     </div>   

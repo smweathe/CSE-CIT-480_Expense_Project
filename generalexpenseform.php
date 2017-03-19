@@ -50,13 +50,13 @@
                   <div class="input-group">
                   <center><i class="fa fa-money fa-5x" aria-hidden="true"></i></center>
                   <br>
-                  Merchant Name: <input type="text" class="required" required value="" name="merchant" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                  Date: <input type="date" class="required" required value="" name="date"  tabindex="2" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                  Total:<input type="decimal" class="required" required value="" name="total" tabindex="3" placeholder="$0.00" tabindex="3" min="0.00" max="9999999.99" step="2" style="margin-bottom:5px"><sup class="required" title="Required"></sup>
-                  Additional Comments: <textarea name="comment" rows="5" tabindex="4" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
-                  Upload Receipt: <input type="file" accept="image/*" name="fileToUpload" tabindex="5" id="fileToUpload" tabindex="5" style="margin-bottom: 5px"><br><br>
+                  Merchant Name: <input type="text" class="required" required value="" name="merchant" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                  Date: <input type="date" class="required" required value="" name="generalDate" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                  Total:<input type="decimal" class="required" required value="" name="generalTotal" placeholder="$0.00" min="0.00" max="9999999.99" step="2" style="margin-bottom:5px"><sup class="required" title="Required"></sup>
+                  Additional Comments: <textarea name="generalComment" rows="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
+                  Upload Receipt: <input type="file" accept="image/*" name="generalExpense_Receipt" id="generalExpense_Receipt" style="margin-bottom: 5px"><br><br>
                   
-                  <input class="btn btn-alt full-width" href="./account.php" tabindex="6" type="submit" name="general" value="Submit Form" />
+                  <input class="btn btn-alt full-width" href="./account.php" type="submit" name="general" value="Submit Form" />
 
                   <br><br>
                </form>

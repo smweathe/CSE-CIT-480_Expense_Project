@@ -72,25 +72,25 @@
 
 			?>
             <br>
-            Merchant Name: <input type="text" class="required disabled" id="merchant" name="merchant" tabindex="1" style="margin-bottom: 5px" value="<?php echo $row['BusinessName'];?>"><sup class="required" title="Required"></sup>
-            Date: <input type="date" class="required" id="date" name="date"  tabindex="2" style="margin-bottom: 5px" value="<?php $date = date("Y-m-d", strtotime($row['ExpenseDate'])); echo $date;?>"><sup class="required" title="Required"></sup>
-            Total:<input type="decimal" class="required" id="total" name="total" placeholder="$0.00" tabindex="3" min="0.00" max="9999999.99" step="2" style="margin-bottom: 5px" value="<?php echo $row['TotalPrice'];?>"><sup class="required" title="Required"></sup>
+            Merchant Name: <input type="text" class="required disabled" id="merchant" name="merchant" style="margin-bottom: 5px" value="<?php echo $row['BusinessName'];?>"><sup class="required" title="Required"></sup>
+            Date: <input type="date" class="required" id="generalDate" name="generalDate"  style="margin-bottom: 5px" value="<?php $date = date("Y-m-d", strtotime($row['ExpenseDate'])); echo $date;?>"><sup class="required" title="Required"></sup>
+            Total:<input type="decimal" class="required" id="generalTotal" name="generalTotal" placeholder="$0.00" min="0.00" max="9999999.99" step="2" style="margin-bottom: 5px" value="<?php echo $row['TotalPrice'];?>"><sup class="required" title="Required"></sup>
 			<input type='hidden' name='tempId' value='<?php echo $id?>'/>
 			<?php
 				//1 = Pending, 2 = Approved, 3 = Denied
 				if($row['ExpenseStatusID'] == "1"){
-					echo "Additional Comments: <input type='text' id='comments' name='comment' tabindex='4' style='margin-bottom: 5px' value='".$row['expensesUserComment']."'<sup class='required' title='Required'></sup>";
+					echo "Additional Comments: <input type='text' id='generalComment' name='generalComment' style='margin-bottom: 5px' value='".$row['expensesUserComment']."'<sup class='required' title='Required'></sup>";
 				}elseif($row['ExpenseStatusID'] == "2"){
-					echo "Supervisior Comments: <input type='text' id='supComment' name='comment' tabindex='4' style='margin-bottom: 5px' value='".$row['expensesSupervisiorComment']."'<sup class='required' title='Required'></sup>";
+					echo "Supervisior Comments: <input type='text' id='supComment' name='supComment' style='margin-bottom: 5px' value='".$row['expensesSupervisiorComment']."'<sup class='required' title='Required'></sup>";
 				}elseif($row['ExpenseStatusID'] == "3"){
-					echo "Additional Comments: <input type='text' id='comments' name='comment' tabindex='4' style='margin-bottom: 5px' value='".$row['expensesUserComment']."'<sup class='required' title='Required'></sup>";
-					echo "Supervisior Comments: <input type='text' id='supComment' name='comment' tabindex='4' style='margin-bottom: 5px' value='".$row['expensesSupervisiorComment']."'<sup class='required' title='Required'></sup>";
+					echo "Additional Comments: <input type='text' id='generalComment' name='generalComment' style='margin-bottom: 5px' value='".$row['expensesUserComment']."'<sup class='required' title='Required'></sup>";
+					echo "Supervisior Comments: <input type='text' id='supComment' name='supComment' style='margin-bottom: 5px' value='".$row['expensesSupervisiorComment']."'<sup class='required' title='Required'></sup>";
 				}
 
 				if($row['ExpenseStatusID'] == "1" || $row['ExpenseStatusID'] == "3"){
-					echo "<input class='btn btn-alt' tabindex='8' type='button' name='edit' id='edit' value='edit' />";
-					echo "<input class='btn btn-alt' tabindex='8' type='submit' name='resubmit' id='resubmit' value='Resubmit' />";
-					echo "<input class='btn btn-alt' tabindex='8' type='submit' name='delete' id='delete' value='Delete expense' />";
+					echo "<input class='btn btn-alt' type='button' name='edit' id='edit' value='edit' />";
+					echo "<input class='btn btn-alt' type='submit' name='resubmit' id='resubmit' value='Resubmit' />";
+					echo "<input class='btn btn-alt' type='submit' name='delete' id='delete' value='Delete expense' />";
 				}
 			?>
 			<br><br>

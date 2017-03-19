@@ -58,8 +58,7 @@
             $('#addGeneral').click(function () {
                 $('<div/>', {'class' : 'input-group-general', html: GetGeneralHtml()}).hide().appendTo('#container').slideDown('fast');
                 $("#multi").show();
-                moved = true;
-                                var element = document.getElementById("multi");
+                var element = document.getElementById("multi");
                 element.scrollIntoView();
             });
             $('#addAir').click(function () {
@@ -168,11 +167,20 @@
                 <center><i class="fa fa-money fa-5x" aria-hidden="true"></i></center>
                 <br>
                 Merchant Name: <input type="text" class="required" required value="" name="merchant" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                Date: <input type="date" class="required" required value="" name="generalDate" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Date: <input type="date" class="required" required value="" name="generalDate" style=
+                             
+                             
+                             
+                             .
+                             
+                             
+                             
+                             "margin-bottom: 5px"><sup class="required" title="Required"></sup>
                 Total:<input type="decimal" class="required" required value="" name="generalTotal" placeholder="$0.00" min="0.00" max="9999999.99" step="2" style="margin-bottom:5px"><sup class="required" title="Required"></sup>
                 Additional Comments: <textarea name="generalComment" rows="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
                 Upload Receipt: <input type="file" accept="image/*" name="generalExpense_Receipt" id="fileToUpload" style="margin-bottom: 5px"><br><br>
 			</div>	
+                    
             <div class="cloneAir" style="display: none;">            
                 <center><i class="fa fa-plane fa-5x" aria-hidden="true"></i></center>
                 <br>
@@ -205,7 +213,7 @@
                 Hours: <input type="text" class="required" name="hours" id="hours" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
                 Rate: <input type="text"  class="required" name="timeRate"  id="timeRate"  value="" onclick= "calc()" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
                 Total: <input type="text" class="required" name="timeTotal" id="total" value="" placeholder="$0.00" disabled="disabled" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
-                /<!--Calculate Total Script-->
+                <!--Calculate Total Script-->
                 <script>
                 function calc(){
                     $("#hours,#rate").keyup(function () {
@@ -214,15 +222,15 @@
                 }
                 </script>
                 Date: <input type="date" class="required" name="timeDate" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                Additional Comments: <textarea name="timeComment" rows="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>        
+                Additional Comments: <textarea name="timeComment" rows="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup><br><br>        
             </div>        
                     
             <div class="cloneDistance" style="display: none;">
                 <center><i class="fa fa-car fa-5x" aria-hidden="true"></i></center>
                 <br>
-                Distance(in miles): <input type="text" class="required" name="distanceDistance" id="distanceDistance" required value="" autocomplete="false" value="" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                Rate(0.54 is default): <input type="text"  class="required" name="distanceRate"  id="distanceRate" required value="" autocomplete="false" value="" onclick= "calc()" tabindex="2"  style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                Total: <input type="text" class="required" name="distanceTotal" id="distanceTotal" value="" placeholder="$0.00" tabindex="3" disabled="disabled" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
+                Distance(in miles): <input type="text" class="required" name="distanceDistance" id="distanceDistance" required value="" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Rate(0.54 is default): <input type="text"  class="required" name="distanceRate"  id="distanceRate" required value="" autocomplete="false" value="" onclick= "calc()" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Total: <input type="text" class="required" name="distanceTotal" id="distanceTotal" value="" placeholder="$0.00" disabled="disabled" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
 
                 <script>
                 //User can only enter numbers and decimal
@@ -246,9 +254,9 @@
                 }
                 </script>
 
-                Date: <input type="date" class="required" name="distanceDate" required value=""  tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                Additional Comments: <textarea name="distanceComment" rows="5" tabindex="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
-                Upload Receipt: <input type="file" name="distanceExpense_Receipt" tabindex="6" style="margin-bottom: 5px"><br><br>
+                Date: <input type="date" class="required" name="distanceDate" required value=""  style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Additional Comments: <textarea name="distanceComment" rows="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
+                Upload Receipt: <input type="file" name="distanceExpense_Receipt" style="margin-bottom: 5px"><br><br>
 
 				</form>
                 <br><br>

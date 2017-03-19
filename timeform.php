@@ -52,21 +52,21 @@
             <h3><center>Time Form</center></h3>
             <center><i class="fa fa-clock-o fa-5x" aria-hidden="true"></i></center>
             <br>
-            Hours: <input type="text" class="required" name="hours" id="hours" value="" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Rate: <input type="text"  class="required" name="rate"  id="rate"  value="" onclick= "calc()" tabindex="2"  style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Total: <input type="text" class="required" name="total" id="total" value="" placeholder="$0.00" tabindex="3" disabled="disabled" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
+            Hours: <input type="text" class="required" name="hours" id="hours" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Rate: <input type="text"  class="required" name="timeRate"  id="timeRate"  value="" onclick= "calc()" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Total: <input type="text" class="required" name="timeTotal" id="timeTotal" value="" placeholder="$0.00" disabled="disabled" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
             /<!--Calculate Total Script-->
             <script>
             function calc(){
-                $("#hours,#rate").keyup(function () {
-                $('#total').val($('#hours').val() * $('#rate').val());
+                $("#hours,#timeRate").keyup(function () {
+                $('#timeTotal').val($('#timeHours').val() * $('#timeRate').val());
                 });
             }
             </script>
-            Date: <input type="date" class="required" name="date"  tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-            Additional Comments: <textarea name="comment" rows="5" tabindex="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
-            Upload Receipt: <input type="file" name="expense_receipt" tabindex="6" style="margin-bottom: 5px"><br><br>
-            <input class="btn btn-alt full-width" href="./account.php" tabindex="7" type="submit" value="Submit Form" />
+            Date: <input type="date" class="required" name="timeDate" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+            Additional Comments: <textarea name="timeComment" rows="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
+            Upload Receipt: <input type="file" name="timeExpense_receipt" style="margin-bottom: 5px"><br><br>
+            <input class="btn btn-alt full-width" href="./account.php" type="submit" value="Submit Form" />
             <br><br>
          </form>
     </div>    
