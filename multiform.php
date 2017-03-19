@@ -41,6 +41,10 @@
               margin-left: 24px;
               margin-right: 24px;
           }
+          .input-group-distance{
+              margin-left: 24px;
+              margin-right: 24px;
+          }
       </style>
 
   </head>
@@ -61,11 +65,17 @@
             $('#addAir').click(function () {
                 $('<div/>', {'class' : 'input-group-airform', html: GetAirHtml()}).hide().appendTo('#container').slideDown('fast');
                 $("#multi").show();
-                                var element = document.getElementById("multi");
+                var element = document.getElementById("multi");
                 element.scrollIntoView();
             });
             $('#addTime').click(function () {
                 $('<div/>', {'class' : 'input-group-time', html: GetTimeHtml()}).hide().appendTo('#container').slideDown('fast');
+                $("#multi").show();
+                var element = document.getElementById("multi");
+                element.scrollIntoView();
+            });
+            $('#addDistance').click(function () {
+                $('<div/>', {'class' : 'input-group-distance', html: GetDistanceHtml()}).hide().appendTo('#container').slideDown('fast');
                 $("#multi").show();
                 var element = document.getElementById("multi");
                 element.scrollIntoView();
@@ -84,10 +94,10 @@
         return $html.html();    
 	}
      
-	 function GetAirHtml(){
+    function GetAirHtml(){
         var len = $('.input-group-airform').length;
         var $html = $('.cloneAir').clone();
-        $html.find('[name=distance]')[0].name="distance" + len;
+        $html.find('[name=airDistance]')[0].name="airDistance" + len;
         $html.find('[name=airliner]')[0].name="airliner" + len;
         $html.find('[name=starting_loc]')[0].name="starting_loc" + len;
         $html.find('[name=airTotal]')[0].name="airTotal" + len;
@@ -101,10 +111,22 @@
         var len = $('.input-group-time').length;
         var $html = $('.cloneTime').clone();
         $html.find('[name=hours]')[0].name="hours" + len;
-        $html.find('[name=rate]')[0].name="rate" + len;
+        $html.find('[name=timeRate]')[0].name="timeRate" + len;
         $html.find('[name=timeTotal]')[0].name="timeTotal" + len;
         $html.find('[name=timeDate]')[0].name="timeDate" + len;
         $html.find('[name=timeComment]')[0].name="timeComment" + len;
+        return $html.html();    
+	}
+    
+    function GetDistanceHtml(){
+        var len = $('.input-group-distance').length;
+        var $html = $('.cloneDistance').clone();
+        $html.find('[name=distanceDistance]')[0].name="distanceDistance" + len;
+        $html.find('[name=distanceRate]')[0].name="distanceRate" + len;
+        $html.find('[name=distanceTotal]')[0].name="distanceTotal" + len;
+        $html.find('[name=distanceDate]')[0].name="distanceDate" + len;
+        $html.find('[name=distanceComment]')[0].name="distanceComment" + len;
+        $html.find('[name=distanceExpense_Receipt]')[0].name="distanceExpense_Receipt" + len;
         return $html.html();    
 	}
 	</script>  
@@ -138,7 +160,9 @@
 
 					<input class="btn btn-alt full-width" href="#" type="button" id="addGeneral" name="general" value="Add a General form" />			 
 					<input class="btn btn-alt full-width" href="#" type="button" id="addAir" name="air" value="Add an Air Travel form" />	
-                    <input class="btn btn-alt full-width" href="#" type="button" id="addTime" name="time" value="Add a Time form" />	
+                    <input class="btn btn-alt full-width" href="#" type="button" id="addTime" name="time" value="Add a Time form" />
+                    <input class="btn btn-alt full-width" href="#" type="button" id="addDistance" name="distance" value="Add a Distance form" />	
+
                                 
             <div class="cloneGeneral" style="display: none;">
                 <center><i class="fa fa-money fa-5x" aria-hidden="true"></i></center>
@@ -152,7 +176,7 @@
             <div class="cloneAir" style="display: none;">            
                 <center><i class="fa fa-plane fa-5x" aria-hidden="true"></i></center>
                 <br>
-                Distance(in miles): <input type="text" class="required" name="distance" id="distance" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Distance(in miles): <input type="text" class="required" name="airDistance" id="airDistance" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
                 Airliner Company: <input type="text" class="required" name="airliner" id="airliner" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
                 Starting Location: <input type="text" class="required" name="starting_loc" id="starting_loc" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
                 Ending Location: <input type="text" class="required" name="ending_loc" id="ending_loc" autocomplete="false" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
@@ -179,7 +203,7 @@
                 <center><i class="fa fa-clock-o fa-5x" aria-hidden="true"></i></center>
                 <br>
                 Hours: <input type="text" class="required" name="hours" id="hours" value="" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
-                Rate: <input type="text"  class="required" name="rate"  id="rate"  value="" onclick= "calc()" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Rate: <input type="text"  class="required" name="timeRate"  id="timeRate"  value="" onclick= "calc()" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
                 Total: <input type="text" class="required" name="timeTotal" id="total" value="" placeholder="$0.00" disabled="disabled" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
                 /<!--Calculate Total Script-->
                 <script>
@@ -192,6 +216,40 @@
                 Date: <input type="date" class="required" name="timeDate" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
                 Additional Comments: <textarea name="timeComment" rows="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>        
             </div>        
+                    
+            <div class="cloneDistance" style="display: none;">
+                <center><i class="fa fa-car fa-5x" aria-hidden="true"></i></center>
+                <br>
+                Distance(in miles): <input type="text" class="required" name="distanceDistance" id="distanceDistance" required value="" autocomplete="false" value="" tabindex="1" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Rate(0.54 is default): <input type="text"  class="required" name="distanceRate"  id="distanceRate" required value="" autocomplete="false" value="" onclick= "calc()" tabindex="2"  style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Total: <input type="text" class="required" name="distanceTotal" id="distanceTotal" value="" placeholder="$0.00" tabindex="3" disabled="disabled" style="margin-bottom: 5px; background-color: #f3f5f6;"><sup class="required" title="Required"></sup>
+
+                <script>
+                //User can only enter numbers and decimal
+                  $(document).ready(function () {
+                    //called when key is pressed in textbox
+                    $("#distance,#distanceRate").keypress(function (e) {
+                       //if the letter is not digit then display error and don't type anything
+                       if (e.which != 46 && e.which > 31 && (e.which < 48 || e.which > 57)) {
+                          //display error message
+                          $("#errmsg").html("Digits Only").show().fadeOut("slow");
+                                 return false;
+                      }
+                     });
+                  });
+
+                //Calculate Total
+                function calc(){
+                    $("#distance,#distanceRate").keyup(function () {
+                    $('#distanceTotal').val($('#distance').val() * $('#distanceRate').val());
+                    });
+                }
+                </script>
+
+                Date: <input type="date" class="required" name="distanceDate" required value=""  tabindex="4" style="margin-bottom: 5px"><sup class="required" title="Required"></sup>
+                Additional Comments: <textarea name="distanceComment" rows="5" tabindex="5" style="margin-bottom: 5px"></textarea><sup class="required" title="Required"></sup>
+                Upload Receipt: <input type="file" name="distanceExpense_Receipt" tabindex="6" style="margin-bottom: 5px"><br><br>
+
 				</form>
                 <br><br>
         </div>
