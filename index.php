@@ -16,6 +16,20 @@
 
 ?>
 
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/58cd68715b89e2149e1a2447/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -49,34 +63,48 @@
         <div class="benefits page-body">
           <h1 style="margin: 0 0 20px 0; font-weight: bold;" align="center">Welcome to ExpenseMaster</h1>
           <h5 style="margin: 0 0 20px 0;" align="center">"Simplying Company Expense Tracking"</h5>
-            <div class="welcome1" style="">
+            <div class="welcome1" style="box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)">
             <img src="./images/rsz_business.png" alt="Team Meeting" style="width:100%; border-radius:5px; max-width: 100%;height: auto;">
             </div>
             <br>
-            <div class="welcome2" style="background:#F9F9FB; padding: 10px; border:1px solid #E4E4E7; border-radius:5px;">
-            <h3>Mission Statement</h3>
-            <p>Our goal is to improve the efficiency and accuracy of all company expense tracking.
-              For companies still using spreadsheet we offer .csv uploads and convert them to online forms.
-              We are a cloud based solution for companies who need to track company spending.
-              Joining today gives you access to all our tools and analytics for tracking company expenses.</p>
-              <br><br>
-              <p align="center"><b>Join now and see what you have been missing!</b></p>
-              <br>
-              <h6 style="margin: 0!important; text-align: center;">-The ExpenseMaster team</h6>
+            <div class="welcome2" style="background:#F9F9FB; padding: 20px; border:1px solid #E4E4E7; border-radius:5px; box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)">
+                <h3>Mission Statement</h3>
+                <p>Our goal is to improve the efficiency and accuracy of all company expense tracking.
+                For companies still using spreadsheet we offer .csv uploads and convert them to online forms.
+                We are a cloud based solution for companies who need to track company spending.
+                Joining today gives you access to all our tools and analytics for tracking company expenses.</p>
+                <br><br>
+                <p align="center"><b>Join now and see what you have been missing!</b></p>
+                <br>
+                <h6 style="margin: 0!important; text-align: center;">-The ExpenseMaster team</h6>
             </div>
             <br><br>
         </div>
+<!--End of Left Side-->
 
 <!--Right Side-->
       <div class="signup page-sidebar">
         <p class="alert alert-error" id="fill-all-fields" style="display:none"></p>
 
+<!--Business Registration-->
+        <div class="business register" id="businessreg">
+            <div class="welcome2" style="background:#F9F9FB; padding: 20px; border:1px solid #E4E4E7; border-radius:5px; box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)">
+                <h2 style="font-size: 20px; font-weight: bold;">Want to register your business?</h2>
+                <p>To sign up your business and begin using ExpenseMaster, please click the button below. We will then ask you for some basic information about your firm so we can better suit your needs.</p>
+                <br>
+                <a class="btn btn-alt full-width" href="./businessregistration.php" style="width: 100%">Register My Business</a>
+                <br>
+            </div>
+        </div>
+<!--End of Business Registration-->
+
+<br><br>
+<!--Registration Form-->
 			   <form action="includes/signup.inc.php" class="gtm_signup_register_form" id="signup" method="post">
             <div class="info_header" id="joinnow">
-              <h3 align="center" class="join" style="background-color: #2E3639; padding: 0px; font-size: 24px;color: #fff; padding-left: 5px;" >Join Now</h3><i class="fa fa-pencil fa-2x" style="color:white" aria-hidden="true"></i><br>
+              <h3 align="center" class="join" style="background-color: #2E3639; padding: 0px; font-size: 24px;color: #fff; padding-left: 5px;" >User Registration</h3><i class="fa fa-pencil fa-2x" style="color:white" aria-hidden="true"></i><br>
             </div>
 
-<!--Registration Form-->
     				<div class="input-group" id="input-group">
               <p>If you have any difficulty signing up, please email our support team at <a style="text-decoration: none; font-weight: bold; color: darkred;" href="mailto:support@expensemaster.com">support@expensemaster.com</a>.</p>
               <br>
@@ -102,11 +130,7 @@
                       <option value="10">October</option>
                       <option value="11">November</option>
                       <option value="12">December</option>
-                  </select><select name="day" id="day" required="" style="width: 32%;  margin-right:2%; margin-left: 2%;" tabindex="5" id="day">
-                      <option value="">Day</option>
-                  </select><select name="year" id="year" required="" style="width: 32%;" tabindex="6" id="year">
-                      <option value="">Year</option>
-                  </select>
+                  </select><select name="day" id="day" required="" style="width: 32%;  margin-right:2%; margin-left: 2%;" tabindex="5" id="day"><option value="">Day</option></select><select name="year" id="year" required="" style="width: 32%;" tabindex="6" id="year"><option value="">Year</option></select>
               </div>
 
 <!--Determine number of days based on Month Selected-->
@@ -162,16 +186,18 @@
     				  <input class="btn btn-alt full-width" href="./confirm.php" disabled="disabled" tabindex="9" type="submit" value="Create Account">
     				</div>
 			   </form>
+<!--End of Registration Form-->
+
 		    </div>
       </div>
 </div>
     <script src="//d2fjue5z6foteq.cloudfront.net/assets/315cc4a6724c52ae0b7b8f0104132a7094855698/main.js" type="text/javascript"></script>
 
 <!-- Team Container -->
-<div class="w3-container w3-padding-64 w3-center" id="team">
+<div class="w3-container w3-padding-64 w3-center" id="team" style="height:460px">
   <h2>MEET OUR TEAM</h2>
 
-  <div class="w3-row" style="border: 1px solid #E4E4E7; background: #F9F9FB; border-radius: 5px;"><br>
+  <div class="w3-row" style="border: 1px solid #E4E4E7; background: #F9F9FB; border-radius: 5px; box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);"><br>
       <div class="w3-quarter">
         <i class="fa fa-user fa-4x" aria-hidden="true"></i>
         <!--<img src="/w3images/avatar.jpg" alt="Boss" style="width:45%" class="w3-circle w3-hover-opacity">-->
@@ -243,23 +269,26 @@
       </div>
   </div>
 </div>
+<!--End of Team Container-->
 
 <!--Google Maps-->
   <div id="google_map">
     <br>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1466.7529831561732!2d-83.21517120991751!3d42.67182351559072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6b5d32ffab8de22a!2sOakland+University+-+Engineering+Center!5e0!3m2!1sen!2sus!4v1489198341257" width="1023" height="420" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1466.7529831561732!2d-83.21517120991751!3d42.67182351559072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6b5d32ffab8de22a!2sOakland+University+-+Engineering+Center!5e0!3m2!1sen!2sus!4v1489198341257" width="1023" height="420" frameborder="0" style="border:0; box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);" allowfullscreen></iframe>
     <br><br>
   </div>
+<!--End of Google Maps-->
+
 </body>
 
 <!--Footer-->
   <footer class="footer-container">
     <h2 align="center">Follow the team on Social Media</h2>
     <div id="social_icons" align="center" style="color: white; padding: 10px; border-top: 1px solid #edeef0; border-bottom: 1px solid #edeef0;">
-      <a href="https://www.facebook.com/ExpenseMaster/" title="Facebook"><i class="fa fa-facebook fa-4x" style="padding: 0px 5px 0px 5px; color: #365899"></i></a>
-      <a href="https://twitter.com/Expense_Master" title="Twitter"><i class="fa fa-twitter fa-4x" style="padding: 0px 5px 0px 5px; color: #1da1f2"></i></a>
-      <a href="https://plus.google.com/106770097272433071838" title="Google +"><i class="fa fa-google-plus fa-4x" style="padding: 0px 5px 0px 5px; color: #d34836"></i></a>
-      <a href="https://www.linkedin.com/company-beta/16213827/" title="Linkedin"><i class="fa fa-linkedin fa-4x" style="padding: 0px 5px 0px 5px; color: #0077B5"></i></a>
+        <a href="https://www.facebook.com/ExpenseMaster/" title="Facebook"><i class="fa fa-facebook fa-4x" style="padding: 0px 5px 0px 5px; color: #365899"></i></a>
+        <a href="https://twitter.com/Expense_Master" title="Twitter"><i class="fa fa-twitter fa-4x" style="padding: 0px 5px 0px 5px; color: #1da1f2"></i></a>
+        <a href="https://plus.google.com/106770097272433071838" title="Google +"><i class="fa fa-google-plus fa-4x" style="padding: 0px 5px 0px 5px; color: #d34836"></i></a>
+        <a href="https://www.linkedin.com/company-beta/16213827/" title="Linkedin"><i class="fa fa-linkedin fa-4x" style="padding: 0px 5px 0px 5px; color: #0077B5"></i></a>
     </div>
     <div class="footer_links" style="color: white; display: inline-block; width: 100%;">
           <div class="links1" style="float: left; width: 300px;">
@@ -283,5 +312,7 @@
       <h3 align="center" style=" color: white; font-size: 14px;line-height: 2">Designed by Stephen Weatherly ©2017</h3>
     </div>
   </footer>
+  <!--End of footer-->
+
   </body>
 </html>
